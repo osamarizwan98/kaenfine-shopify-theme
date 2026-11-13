@@ -30,6 +30,8 @@
     "text": "ტექსტი"
   },
   "content": {
+    "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
+    "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
     "visible_if_collection_has_more_products": "ხილვადია, თუ კოლექციას ნაჩვენებზე მეტი პროდუქტი აქვს",
     "advanced": "გაფართოებული",
     "appearance": "იერსახე",
@@ -246,6 +248,8 @@
     "show_physical_stores_help": "ასევე ჩამოთვალე ლოკაციები, რომლებიც მონიშნულია, როგორც ფიზიკური ვიტრინა და პროდუქტი მარაგში აქვთ, მაშინაც კი, თუ გატანას არ სთავაზობენ."
   },
   "names": {
+    "product_collection_label": "Product collection label",
+    "product_materials": "Product materials",
     "column": "სვეტი",
     "product_title": "პროდუქტის სათაური",
     "custom_liquid": "მორგებული Liquid",

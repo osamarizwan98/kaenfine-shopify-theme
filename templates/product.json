@@ -98,7 +98,7 @@
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 5,
+                "gap": 2,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -127,17 +127,15 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_b76gFc": {
-                  "type": "text",
-                  "name": "t:names.text",
+                "product_collection_label_Kc7nPq": {
+                  "type": "product-collection-label",
                   "settings": {
-                    "text": "<p><a href=\"/collections/fine-jewelry\" title=\"Fine Jewelry\">Fine Jewelry</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.625rem",
+                    "font_size": "0.75rem",
                     "line_height": "tight",
                     "letter_spacing": "normal",
                     "case": "uppercase",
@@ -147,7 +145,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 7,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -163,7 +161,7 @@
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-heading--family)",
-                    "font_size": "0.875rem",
+                    "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "uppercase",
@@ -189,7 +187,7 @@
                     "width": "100%",
                     "alignment": "left",
                     "font": "var(--font-heading--family)",
-                    "font_size": "0.875rem",
+                    "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -200,12 +198,37 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "product_materials_Rm4tWz": {
+                  "type": "product-materials",
+                  "settings": {
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 27,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "text_b76gFc",
+                "product_collection_label_Kc7nPq",
                 "text_xrnftG",
-                "price_tVjtKg"
+                "price_tVjtKg",
+                "product_materials_Rm4tWz"
               ]
             },
             "variant_picker_R3rGDr": {

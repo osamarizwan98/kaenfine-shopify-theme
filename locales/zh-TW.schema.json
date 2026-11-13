@@ -9,6 +9,8 @@
  */
 {
   "names": {
+    "product_collection_label": "Product collection label",
+    "product_materials": "Product materials",
     "404": "404",
     "colors": "調色盤",
     "custom_section": "自訂區段",
@@ -870,6 +872,8 @@
     "direction_top_start": "左上"
   },
   "content": {
+    "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
+    "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
     "advanced": "進階",
     "background_image": "背景圖片",
     "background_video": "背景影片",
