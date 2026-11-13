@@ -173,6 +173,8 @@
     "disclosures": "Ilmoitukset"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "alignment": "Tasaus",
     "autoplay": "Automaattinen toisto",
     "background": "Tausta",

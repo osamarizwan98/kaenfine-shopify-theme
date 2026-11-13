@@ -694,6 +694,8 @@
     "below_media": "મીડિયાની નીચે"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "accordion": "એકોર્ડિયન",
     "account": "એકાઉન્ટ",
     "actions_display_style": "મેનૂની સ્ટાઇલ",

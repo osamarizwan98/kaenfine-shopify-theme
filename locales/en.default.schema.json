@@ -1108,6 +1108,8 @@
     "show_second_image_on_hover": "Show second image on hover",
     "show_swatch_label": "Text labels for swatches",
     "show_tax_info": "Tax information",
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     // Font size or element dimensions setting
     "size": "Size",
     "skus": "SKUs",

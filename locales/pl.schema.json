@@ -173,6 +173,8 @@
     "disclosures": "Informacje prawne"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "autoplay": "Autoodtwarzanie",
     "background": "Tło",
     "border_radius": "Promień narożnika",

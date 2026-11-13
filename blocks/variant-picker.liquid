@@ -8,13 +8,24 @@
 -%}
 
 {% unless product_resource == blank %}
-  {% render 'variant-main-picker', product_resource: product_resource, section: section, product: product %}
+  {% capture children %}{% content_for 'blocks' %}{% endcapture %}
+  {% render 'variant-main-picker',
+    product_resource: product_resource,
+    section: section,
+    product: product,
+    children: children
+  %}
 {% endunless %}
 
 {% schema %}
 {
   "name": "t:names.product_variant_picker",
   "tag": null,
+  "blocks": [
+    {
+      "type": "popup-link"
+    }
+  ],
   "settings": [
     {
       "type": "header",
@@ -134,6 +145,38 @@
       "default": "{{ settings.color_palette.foreground }}",
       "alpha": true,
       "visible_if": "{{ block.settings.variant_style == 'buttons' and block.settings.selected_variant_style_class == 'custom' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_only",
+      "label": "t:settings.text_only_options",
+      "default": false,
+      "visible_if": "{{ block.settings.variant_style == 'buttons' }}"
+    },
+    {
+      "type": "select",
+      "id": "type_preset",
+      "label": "t:settings.preset",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "paragraph",
+          "label": "t:options.paragraph"
+        },
+        {
+          "value": "h5",
+          "label": "t:options.h5"
+        },
+        {
+          "value": "h6",
+          "label": "t:options.h6"
+        }
+      ],
+      "default": "",
+      "info": "t:info.edit_presets_in_theme_settings"
     },
     {
       "type": "text_alignment",

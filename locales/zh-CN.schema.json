@@ -173,6 +173,8 @@
     "disclosures": "披露信息"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "alignment": "对齐方式",
     "autoplay": "自动播放",
     "background": "背景",

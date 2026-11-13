@@ -21,6 +21,9 @@
     {% render 'border-override', settings: block_settings %}
     {% if block_settings.divider_color != blank %} --color-border: {{ block_settings.divider_color }};{% endif %}
   "
+  {% if block_settings.single_row_open %}
+    data-accordion-group="{{ block.id }}"
+  {% endif %}
   {{ block.shopify_attributes }}
 >
   {% content_for 'blocks' %}
@@ -60,6 +63,12 @@
       "id": "dividers",
       "label": "t:settings.dividers",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "single_row_open",
+      "label": "t:settings.single_row_open",
+      "default": false
     },
     {
       "type": "color",

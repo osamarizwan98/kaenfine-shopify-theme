@@ -140,12 +140,12 @@
                     "letter_spacing": "normal",
                     "case": "uppercase",
                     "wrap": "pretty",
-                    "text_color": "#BCB7AD",
+                    "text_color": "#bcb7ad",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 7,
+                    "padding-block-end": 11,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -161,17 +161,17 @@
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-heading--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "uppercase",
+                    "font_size": "0.875rem",
+                    "line_height": "tight",
+                    "letter_spacing": "tight",
+                    "case": "none",
                     "wrap": "pretty",
                     "text_color": "{{ settings.color_palette.foreground }}",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 2,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -186,10 +186,10 @@
                     "type_preset": "custom",
                     "width": "100%",
                     "alignment": "left",
-                    "font": "var(--font-heading--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "tight",
+                    "letter_spacing": "tight",
                     "case": "none",
                     "text_color": "{{ settings.color_palette.foreground }}",
                     "padding-block-start": 0,
@@ -207,8 +207,8 @@
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.875rem",
-                    "line_height": "normal",
+                    "font_size": "0.75rem",
+                    "line_height": "tight",
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
@@ -216,7 +216,7 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 27,
+                    "padding-block-start": 24,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
@@ -235,8 +235,10 @@
               "type": "variant-picker",
               "settings": {
                 "variant_style": "buttons",
-                "show_swatches": false,
+                "show_swatches": true,
                 "option_label_text_color": "",
+                "text_only": true,
+                "type_preset": "h6",
                 "variant_style_class": "default",
                 "custom_variant_background": "{{ settings.color_palette.background }}",
                 "custom_variant_text": "{{ settings.color_palette.foreground }}",
@@ -246,12 +248,199 @@
                 "custom_selected_variant_text": "{{ settings.color_palette.background }}",
                 "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
                 "alignment": "left",
-                "padding-block-start": 0,
+                "padding-block-start": 18,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "popup_link_Sg4Qx7": {
+                  "type": "popup-link",
+                  "settings": {
+                    "behavior": "drawer",
+                    "heading": "Size guide",
+                    "type_preset": "h6",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "text_Sg1Hd2": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Size guide</p>",
+                        "width": "100%",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "uppercase",
+                        "padding-block-end": 40
+                      },
+                      "blocks": {}
+                    },
+                    "accordion_Sg3Ac4": {
+                      "type": "accordion",
+                      "settings": {
+                        "icon": "caret",
+                        "single_row_open": true,
+                        "dividers": true,
+                        "divider_color": "#d0cbc1",
+                        "type_preset": "h6"
+                      },
+                      "blocks": {
+                        "accordion_row_Sg5Rw1": {
+                          "type": "_accordion-row",
+                          "settings": {
+                            "heading": "USING AN EXISTING RING WHICH FITS PROPERLY TO THE FINGER",
+                            "open_by_default": true,
+                            "icon": "none"
+                          },
+                          "blocks": {
+                            "text_Sg6St1": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>How to measure your diameter</p>",
+                                "width": "100%",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "padding-block-start": 8,
+                                "padding-block-end": 0
+                              },
+                              "blocks": {}
+                            },
+                            "custom_liquid_Sg6Vd1": {
+                              "type": "custom-liquid",
+                              "settings": {
+                                "custom_liquid": "<video class='size-video' src='https://cdn.shopify.com/videos/c/o/v/3eb16ab680464ad5ab3ec7e9440c3ecd.mp4' poster='https://cdn.shopify.com/s/files/1/0739/2637/7767/files/know-the-size-poster-video.jpg' controls playsinline preload='none' disablepictureinpicture controlslist='nodownload' aria-label='How to measure the internal diameter of a ring'></video>"
+                              },
+                              "blocks": {}
+                            },
+                            "text_Sg6St2": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>1. Select an existing ring that fits the desired finger.<br>2. Measure the internal diameter of the ring in mm.<br>3. Select the diameter below to determine your ring size.</p>",
+                                "width": "100%",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "padding-block-start": 12,
+                                "padding-block-end": 26
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "text_Sg6St1",
+                            "custom_liquid_Sg6Vd1",
+                            "text_Sg6St2"
+                          ]
+                        },
+                        "accordion_row_Sg5Rw2": {
+                          "type": "_accordion-row",
+                          "settings": {
+                            "heading": "SIZE CHART",
+                            "open_by_default": false,
+                            "icon": "none"
+                          },
+                          "blocks": {
+                            "custom_liquid_Sg7Tb1": {
+                              "type": "custom-liquid",
+                              "settings": {
+                                "custom_liquid": "<table class='size-table'><thead><tr><th scope='col'>Internal diameter(mm)</th><th scope='col'>Internal diameter(in)</th><th scope='col'><strong>Desired size</strong></th></tr></thead><tbody><tr><td>15,3 mm</td><td>0.60 in</td><td><strong>8*</strong></td></tr><tr><td>15,9 mm</td><td>0.63 in</td><td><strong>10</strong></td></tr><tr><td>16,5 mm</td><td>0.65 in</td><td><strong>12</strong></td></tr><tr><td>17,1 mm</td><td>0.67 in</td><td><strong>14</strong></td></tr><tr><td>17,8 mm</td><td>0.70 in</td><td><strong>16</strong></td></tr><tr><td>18,4 mm</td><td>0.73 in</td><td><strong>18*</strong></td></tr></tbody></table>"
+                              },
+                              "blocks": {}
+                            },
+                            "text_Sg8Nt1": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>* Sizes 8 / 18: available in some styles</p>",
+                                "width": "100%",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "padding-block-start": 20,
+                                "padding-block-end": 26
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "custom_liquid_Sg7Tb1",
+                            "text_Sg8Nt1"
+                          ]
+                        },
+                        "accordion_row_Sg5Rw3": {
+                          "type": "_accordion-row",
+                          "settings": {
+                            "heading": "COMPARING YOUR COUNTRY'S SIZES WITH OURS",
+                            "open_by_default": false,
+                            "icon": "none"
+                          },
+                          "blocks": {
+                            "custom_liquid_Sg7Tb2": {
+                              "type": "custom-liquid",
+                              "settings": {
+                                "custom_liquid": "<table class='size-table size-table--dense'><thead><tr><th scope='col'><strong>Desired size</strong></th><th scope='col'>sp / it</th><th scope='col'>fr / de</th><th scope='col'>uk / au</th><th scope='col'>us / ca</th><th scope='col'>jp / ch</th></tr></thead><tbody><tr><td><strong>8*</strong></td><td>8</td><td>48</td><td>I - J</td><td>4.5 - 5</td><td>8</td></tr><tr><td><strong>10</strong></td><td>10</td><td>50</td><td>K</td><td>5.5</td><td>9</td></tr><tr><td><strong>12</strong></td><td>12</td><td>52</td><td>L - M</td><td>6 - 6.5</td><td>11</td></tr><tr><td><strong>14</strong></td><td>14</td><td>54</td><td>N</td><td>6.75 - 7</td><td>13</td></tr><tr><td><strong>16</strong></td><td>16</td><td>56</td><td>O - P</td><td>7.5</td><td>15</td></tr><tr><td><strong>18*</strong></td><td>18</td><td>58</td><td>Q</td><td>8</td><td>17</td></tr></tbody></table>"
+                              },
+                              "blocks": {}
+                            },
+                            "text_Sg8Nt2": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>* Sizes 8 / 18: available in some styles</p>",
+                                "width": "100%",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "padding-block-start": 20,
+                                "padding-block-end": 26
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "custom_liquid_Sg7Tb2",
+                            "text_Sg8Nt2"
+                          ]
+                        }
+                      },
+                      "block_order": [
+                        "accordion_row_Sg5Rw1",
+                        "accordion_row_Sg5Rw2",
+                        "accordion_row_Sg5Rw3"
+                      ]
+                    }
+                  },
+                  "block_order": [
+                    "text_Sg1Hd2",
+                    "accordion_Sg3Ac4"
+                  ]
+                }
+              },
+              "block_order": [
+                "popup_link_Sg4Qx7"
+              ]
             },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",

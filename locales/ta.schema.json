@@ -694,6 +694,8 @@
     "below_media": "மீடியாவுக்குக் கீழே"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "accordion": "அக்கார்டியன்",
     "account": "கணக்கு",
     "actions_display_style": "மெனு ஸ்டைல்",

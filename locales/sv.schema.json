@@ -173,6 +173,8 @@
     "disclosures": "Upplysningar"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "alignment": "Justering",
     "autoplay": "Autouppspelning",
     "background": "Bakgrund",

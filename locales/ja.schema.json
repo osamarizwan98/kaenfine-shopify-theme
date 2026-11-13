@@ -173,6 +173,8 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "alignment": "配置",
     "autoplay": "自動再生",
     "background": "背景",

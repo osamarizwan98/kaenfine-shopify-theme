@@ -5,6 +5,7 @@
   @param {object} [block] - The block object
   @param {object} section - The section object.
   @param {object} product - The current product object (used to determine selected variant state).
+  @param {string} [children] - Rendered child blocks, shown on the first option's label row (e.g. a size guide popup link).
 {%- enddoc -%}
 
 {% assign block_settings = block.settings %}
@@ -22,14 +23,29 @@
     assign has_custom_variant_buttons = true
   endif
   assign fieldset_index = 0
+
+  # Children (e.g. a size guide link) attach to the option named "size", falling back to the first option
+  assign children_option_index = 0
+  for option_name in product_resource.options
+    assign option_name_lower = option_name | downcase
+    if option_name_lower contains 'size'
+      assign children_option_index = forloop.index0
+      break
+    endif
+  endfor
 %}
+{%- capture children_markup -%}
+  {%- if children != blank -%}
+    <div class="variant-option__children">{{ children }}</div>
+  {%- endif -%}
+{%- endcapture -%}
 
 {% unless product_resource.has_only_default_variant %}
   {% if has_custom_variant_buttons %}
     {% render 'variant-button-custom-styles', block_settings: block_settings, block_id: block.id %}
   {% endif %}
   <variant-picker
-    class="variant-picker spacing-style variant-picker--{{ block_settings.alignment }}{% if has_custom_variant_buttons %} variant-picker--custom-{{ block.id }}{% endif %}"
+    class="variant-picker spacing-style variant-picker--{{ block_settings.alignment }}{% if has_custom_variant_buttons %} variant-picker--custom-{{ block.id }}{% endif %}{% if block_settings.text_only and block_settings.variant_style == 'buttons' %} variant-picker--text{% endif %} {{ block_settings.type_preset }}"
     style="
       {% render 'spacing-style', settings: block_settings %}
        {% if block_settings.option_label_text_color != blank %}
@@ -85,6 +101,7 @@
             >
               {{- product_option.selected_value -}}
             </span>
+            {%- if forloop.index0 == children_option_index %}{{ children_markup }}{% endif -%}
           </div>
         {%- elsif variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
           <fieldset
@@ -99,6 +116,7 @@
                 <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
               {%- endif %}
             </legend>
+            {%- if forloop.index0 == children_option_index %}{{ children_markup }}{% endif -%}
             {%- for product_option_value in product_option.values -%}
               {% if product_option_value.size > longest_value and option_id_attribute %}
                 {% assign longest_value = product_option_value.size %}
@@ -191,6 +209,7 @@
 
           <div class="variant-option variant-option--dropdowns">
             <label for="Option-{{ block.id }}-{{ forloop.index0 }}">{{ product_option.name | escape }}</label>
+            {%- if forloop.index0 == children_option_index %}{{ children_markup }}{% endif -%}
             <div
               class="variant-option__select-wrapper"
               style="

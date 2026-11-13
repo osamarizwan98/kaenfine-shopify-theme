@@ -694,6 +694,8 @@
     "below_media": "Meedia all"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "accordion": "Akordion",
     "account": "Konto",
     "actions_display_style": "Menüü stiil",

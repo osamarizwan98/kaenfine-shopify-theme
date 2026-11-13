@@ -694,6 +694,8 @@
     "below_media": "మీడియా దిగువన"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "text_only_options": "Text-only options",
     "accordion": "అకార్డియన్",
     "account": "ఖాతా",
     "actions_display_style": "మెనూ స్టైల్",
