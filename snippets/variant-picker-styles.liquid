@@ -711,4 +711,55 @@
       display: none;
     }
   }
+
+  /* Text-only pickers: flat color chips with the selected one underlined; sold out is muted. Row gap is 45px (40px on mobile) less the chip's 3px margin */
+  .variant-picker--text .variant-option + .variant-option--swatches {
+    margin-block-start: 37px;
+
+    @media screen and (min-width: 750px) {
+      margin-block-start: 42px;
+    }
+  }
+
+  .variant-picker--text .variant-option--swatches {
+    --variant-picker-swatch-width: 14px;
+    --variant-picker-swatch-height: 14px;
+    --variant-picker-swatch-radius: 0px;
+
+    gap: 0 10px;
+
+    .swatch {
+      border-width: 0;
+    }
+
+    .variant-option__button-label--has-swatch {
+      margin-block-start: 3px;
+      padding-block-end: 8px;
+      border: 1px solid transparent;
+    }
+
+    .variant-option__button-label--has-swatch:not(:has(:focus-visible)) {
+      outline: none;
+    }
+
+    .variant-option__button-label--has-swatch:hover {
+      border-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    }
+
+    .variant-option__button-label--has-swatch:has(:checked),
+    .variant-option__button-label--has-swatch:has(:checked):hover {
+      border-color: transparent;
+      border-block-end-color: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+    }
+
+    .variant-option__button-label--has-swatch:has([data-option-available='false']) {
+      svg {
+        display: none;
+      }
+
+      .swatch {
+        opacity: var(--opacity-30);
+      }
+    }
+  }
 {% endstylesheet %}

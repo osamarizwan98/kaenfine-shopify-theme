@@ -8,6 +8,8 @@
 {% stylesheet %}
   .buy-buttons-block {
     --buy-button-preferred-width: 185px;
+    --height-buy-buttons: 47px;
+    --style-border-radius-buttons-primary: 0px;
 
     width: 100%;
   }
@@ -103,6 +105,18 @@
 
   .add-to-cart-button.button-secondary {
     text-transform: var(--button-text-case-secondary);
+  }
+
+  .buy-buttons-block .add-to-cart-button {
+    font-size: 0.75rem;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .buy-buttons-block .add-to-cart-button:hover:not(:disabled) {
+    --button-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-60));
   }
 
   shopify-accelerated-checkout {

@@ -110,7 +110,7 @@
             ref="fieldsets[]"
             {{ option_id_attribute }}
           >
-            <legend>
+            <legend{% if variant_style == 'swatch' and block_settings.text_only %} class="visually-hidden"{% endif %}>
               {{ product_option.name | escape -}}
               {%- if variant_style == 'swatch' -%}
                 <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
