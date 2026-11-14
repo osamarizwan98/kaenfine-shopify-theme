@@ -1,7 +1,13 @@
 import { OverflowList } from '@theme/overflow-list';
 import VariantPicker from '@theme/variant-picker';
 import { ProductComponent } from '@theme/view-event-elements';
-import { debounce, isDesktopBreakpoint, mediaQueryLarge, yieldToMainThread } from '@theme/utilities';
+import {
+  debounce,
+  isDesktopBreakpoint,
+  mediaQueryLarge,
+  prefersReducedMotion,
+  yieldToMainThread,
+} from '@theme/utilities';
 import { SlideshowSelectEvent } from '@theme/events';
 import { morph } from '@theme/morph';
 import { StandardEvents, ProductSelectEvent } from '@shopify/events';
@@ -484,6 +490,7 @@ export class ProductCard extends ProductCardLink {
     if (!slideshow) return;
 
     this.resetVariant.cancel();
+    this.#fadeOutCurrentImage();
 
     if (this.#previousSlideIndex != null && this.#previousSlideIndex > 0) {
       slideshow.select(this.#previousSlideIndex, undefined, { animate: false });
@@ -502,12 +509,38 @@ export class ProductCard extends ProductCardLink {
 
     const { slideshow } = this.refs;
 
+    this.#fadeOutCurrentImage();
+
     if (!this.variantPicker) {
       if (!slideshow) return;
       slideshow.previous(undefined, { animate: false });
     } else {
       this.#resetVariant();
     }
+  }
+
+  /**
+   * Crossfades the hover image swap: a copy of the visible image fades out
+   * over the slide that is selected right after.
+   */
+  #fadeOutCurrentImage() {
+    const { cardGallery, slideshow } = this.refs;
+    const image = slideshow?.slides?.[slideshow.current]?.querySelector('img');
+    if (!cardGallery || !(image instanceof HTMLImageElement) || prefersReducedMotion()) return;
+
+    const { objectFit, objectPosition } = getComputedStyle(image);
+    const copy = document.createElement('img');
+    copy.src = image.currentSrc || image.src;
+    copy.alt = '';
+    copy.className = 'card-gallery__fade-image';
+    copy.style.objectFit = objectFit;
+    copy.style.objectPosition = objectPosition;
+    cardGallery.append(copy);
+
+    copy
+      .animate({ opacity: [1, 0] }, { duration: 300, easing: 'ease' })
+      .finished.catch(() => {})
+      .finally(() => copy.remove());
   }
 
   /**

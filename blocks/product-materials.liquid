@@ -2,8 +2,9 @@
   Renders the parent product's material lines: stone, then base metal.
   Reads the single-line text metafields `custom.stone` and `custom.base_metal`.
   Each line renders only when it has a value, and the block renders nothing when
-  both are empty. Typography, color, and padding come from `block.settings` via
-  the `text` snippet.
+  both are empty. The horizontal direction joins them with " / " and stacks them
+  on mobile. Typography, color, and padding come from `block.settings` via the
+  `text` snippet.
 
   @example
   {% content_for 'block', type: 'product-materials', id: 'materials' %}
@@ -22,7 +23,11 @@
         echo stone | escape
       endif
       if stone != blank and base_metal != blank
-        echo '<br>'
+        if block.settings.direction == 'horizontal'
+          echo '<span class="product-materials__separator"> / </span>'
+        else
+          echo '<br>'
+        endif
       endif
       if base_metal != blank
         echo base_metal | escape
@@ -33,6 +38,17 @@
 %}
 
 {% render 'text', fallback_text: materials, block: block %}
+
+{% stylesheet %}
+  @media screen and (max-width: 749px) {
+    .product-materials__separator {
+      display: block;
+      height: 0;
+      overflow: hidden;
+      font-size: 0;
+    }
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -46,6 +62,22 @@
     {
       "type": "header",
       "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "t:settings.direction",
+      "options": [
+        {
+          "value": "vertical",
+          "label": "t:options.vertical"
+        },
+        {
+          "value": "horizontal",
+          "label": "t:options.horizontal"
+        }
+      ],
+      "default": "vertical"
     },
     {
       "type": "select",

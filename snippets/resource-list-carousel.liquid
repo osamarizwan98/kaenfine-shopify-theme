@@ -7,6 +7,8 @@
   @param {object} settings - The block or sections settings from the parent block/section.
   @param {string} [slide_width_max] - The maximum width of the slides in the carousel.
 
+  Reads `settings.arrows_position` ('center' | 'top-right') when present.
+
   @example
   {% render 'resource-list-carousel', slides: slides, slide_count: slide_count, settings: block.settings %}
 {%- enddoc -%}
@@ -25,6 +27,11 @@
   assign show_arrows = false
   if settings.icons_style != 'none'
     assign show_arrows = true
+  endif
+
+  # Header arrows only appear when there is more than one view of slides.
+  if settings.arrows_position == 'top-right' and slide_count <= settings.columns
+    assign show_arrows = false
   endif
 %}
 
@@ -46,6 +53,7 @@
     show_arrows: show_arrows,
     icon_style: settings.icons_style,
     icon_shape: settings.icons_shape,
+    arrows_position: settings.arrows_position,
     auto_hide_controls: false,
     infinite: false,
     initial_slide: 0,
@@ -89,6 +97,20 @@
     }
   }
 
+  /*
+    Full-width carousels fill the row instead of peeking the next card: the last
+    visible card overruns the edge by the -8px peek, and mobile shows 2.15 cards.
+  */
+  .section--full-width .resource-list__carousel {
+    --peek-next-slide-size: -8px;
+  }
+
+  @container resource-list-carousel (max-width: 749px) {
+    .section--full-width .resource-list__carousel .resource-list__slide {
+      --slide-width: calc((100cqw - 1.15 * var(--resource-list-column-gap)) / 2.15);
+    }
+  }
+
   .resource-list__carousel > slideshow-container > slideshow-slides {
     gap: var(--resource-list-column-gap);
     cursor: default;
@@ -105,6 +127,52 @@
 
   .resource-list__carousel slideshow-arrows {
     padding-inline: var(--util-page-margin-offset);
+  }
+
+  /* Arrows sit in the section header row, above the slides. */
+  .resource-list__carousel slideshow-arrows[position='top-right'] {
+    inset: auto 0 calc(100% + var(--gap, 0px) - 12px) auto;
+    padding-inline: 0 20px;
+    mix-blend-mode: normal;
+
+    /* Doubled class outranks the base.css hover slide-in animation. */
+    .slideshow-control.slideshow-control {
+      display: flex;
+      opacity: 1;
+      animation: none;
+      width: 23px;
+      min-width: 0;
+      min-height: 24px;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-foreground);
+      transition: color var(--animation-speed) var(--animation-easing);
+    }
+
+    .slideshow-control[disabled],
+    .slideshow-control:hover {
+      color: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+    }
+
+    /* Nothing to scroll: hide both arrows. */
+    &:not(:has(.slideshow-control:not([disabled]))) {
+      display: none;
+    }
+
+    .icon-caret {
+      --icon-stroke-width: 0.55px;
+    }
+
+    .svg-wrapper,
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    @media screen and (max-width: 749px) {
+      display: none;
+    }
   }
 
   .resource-list__carousel .resource-list__slide {

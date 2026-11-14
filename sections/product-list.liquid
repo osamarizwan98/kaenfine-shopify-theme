@@ -1,12 +1,54 @@
-
+{% comment %}
+  Section contract.
+  Lists products from a merchant-selected collection, or the shopper's recently
+  viewed products. Recently viewed renders empty, then the component re-renders
+  the section through search results for the stored product IDs.
+  @example
+  <!-- Product list with layout "Carousel" and products "Recently viewed" -->
+{% endcomment %}
 
 {% liquid
   assign max_items = section.settings.max_products
-  if section.settings.background_color != blank
+  assign recently_viewed = false
+  assign viewed_products = '' | split: ''
+
+  if section.settings.product_source == 'recently_viewed'
+    assign recently_viewed = true
+    if search.performed
+      # Search results ignore the stored order, so rebuild it from the id: terms.
+      assign viewed_ids = search.terms | remove: 'id:' | split: ' OR '
+      for viewed_id in viewed_ids
+        assign viewed_id_number = viewed_id | strip | times: 1
+        assign viewed_match = search.results | where: 'id', viewed_id_number
+        assign viewed_products = viewed_products | concat: viewed_match
+      endfor
+    endif
+  endif
+
+  assign show_list = true
+  if recently_viewed and viewed_products.size == 0 and request.design_mode == false
+    assign show_list = false
+  endif
+
+  if section.settings.background_color != blank and show_list
     render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
   endif
 %}
 
+{% if recently_viewed %}
+  <script
+    src="{{ 'recently-viewed-products.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+  <recently-viewed-products
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+    data-loaded="{{ search.performed }}"
+  >
+{% endif %}
+
+{% if show_list %}
 <div
   class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
@@ -30,7 +72,22 @@
   </div>
 
   {% capture list_items %}
-    {% if section.settings.collection != blank and shop.products_count != 0 %}
+    {% if recently_viewed and viewed_products.size > 0 %}
+      {% for product in viewed_products limit: max_items %}
+        <div class="resource-list__item">
+          {% content_for 'block',
+            type: '_product-card',
+            id: 'static-product-card',
+            closest.product: product,
+            product_view_context: 'search'
+          %}
+        </div>
+
+        {% unless forloop.last %}
+          <!--@list/split-->
+        {% endunless %}
+      {% endfor %}
+    {% elsif recently_viewed == false and section.settings.collection != blank and shop.products_count != 0 %}
       {% paginate section.settings.collection.products by max_items %}
         {% for product in section.settings.collection.products limit: max_items %}
         <div
@@ -73,7 +130,7 @@
     list_items: list_items,
     list_items_array: list_items_array,
     settings: section.settings,
-    slide_count: max_items,
+    slide_count: list_items_array.size,
     content_type: 'products',
     test_id: 'resource-list-grid'
   %}
@@ -85,6 +142,24 @@
     {%- content_for 'blocks' -%}
   </div>
 </div>
+{% endif %}
+
+{% if recently_viewed %}
+  </recently-viewed-products>
+{% endif %}
+
+{% stylesheet %}
+  recently-viewed-products {
+    display: contents;
+  }
+
+  /* Heading inset follows the mobile spacing scale (23px -> 16px). */
+  @media screen and (max-width: 749px) {
+    .section-resource-list__header .text-block {
+      padding-inline-start: calc(var(--padding-inline-start) * var(--spacing-scale-md));
+    }
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -105,6 +180,22 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "select",
+      "id": "product_source",
+      "label": "t:settings.products",
+      "options": [
+        {
+          "value": "collection",
+          "label": "t:settings.collection"
+        },
+        {
+          "value": "recently_viewed",
+          "label": "t:options.recently_viewed"
+        }
+      ],
+      "default": "collection"
+    },
     {
       "type": "collection",
       "id": "collection",
@@ -266,6 +357,23 @@
       ],
       "default": "none",
       "visible_if": "{{ section.settings.icons_style != 'none' and section.settings.layout_type == 'carousel' or section.settings.carousel_on_mobile == true }}"
+    },
+    {
+      "type": "select",
+      "id": "arrows_position",
+      "label": "t:settings.position",
+      "options": [
+        {
+          "value": "center",
+          "label": "t:options.on_image"
+        },
+        {
+          "value": "top-right",
+          "label": "t:options.top_right"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ section.settings.icons_style != 'none' and section.settings.layout_type == 'carousel' }}"
     },
     {
       "type": "header",

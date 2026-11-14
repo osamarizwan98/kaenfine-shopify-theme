@@ -1,10 +1,22 @@
 
 
-{% assign product = closest.product %}
+{% liquid
+  assign product = closest.product
+
+  # Same source as the product page label: custom.display_collection, then the first collection.
+  if block.settings.show_collection_label and product != blank
+    assign display_collection = product.metafields.custom.display_collection.value
+    if display_collection == blank
+      assign display_collection = product.collections.first
+    endif
+  endif
+%}
 
 {% capture children %}
   {% unless product == blank %}
-    {%- if product.available == false or product.compare_at_price > product.price -%}
+    {%- if display_collection != blank -%}
+      <span class="card-gallery__collection-label">{{ display_collection.title | escape }}</span>
+    {%- elsif product.available == false or product.compare_at_price > product.price -%}
       <div
         class="product-badges product-badges--{{ settings.badge_position }}"
         style="
@@ -46,6 +58,32 @@
 {% render 'product-card-gallery-zoom-details-styles' %}
 {% render 'product-badges-styles' %}
 
+{% stylesheet %}
+  .card-gallery__collection-label {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    z-index: var(--layer-raised);
+    padding: 6px;
+    font-family: var(--font-body--family);
+    font-size: 9px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    pointer-events: none;
+
+    @media screen and (max-width: 1024px) {
+      padding: 4px 6px;
+    }
+
+    @media screen and (max-width: 749px) {
+      font-size: 8px;
+      line-height: 11px;
+    }
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:names.product_image",
@@ -79,6 +117,13 @@
       "default": "portrait",
       "label": "t:settings.aspect_ratio",
       "info": "t:info.aspect_ratio_adjusted"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_label",
+      "label": "t:names.product_collection_label",
+      "info": "t:content.resource_reference_product_collection_label",
+      "default": false
     },
     {
       "type": "header",
