@@ -4,6 +4,7 @@
   Source "details": Materials (custom.materials), Specifications (custom.specifications), Care (custom.care)
   and the SKU of the selected variant as the reference.
   Source "diamond": rows from custom.diamond_characteristics followed by the note setting.
+  Sources "craftsmanship" and "inspiration": the rich text metafield of the same name.
   Spec metafields hold one "Label: Value" per line. Renders nothing when every source is empty.
 
   @example
@@ -17,6 +18,12 @@
   capture specs
     if block.settings.source == 'diamond'
       render 'product-spec-rows', lines: custom.diamond_characteristics.value
+    elsif block.settings.source == 'craftsmanship' or block.settings.source == 'inspiration'
+      assign rich_text = custom[block.settings.source]
+      if rich_text != blank
+        assign rich_html = rich_text | metafield_tag
+        echo '<div class="product-specs__rich">' | append: rich_html | append: '</div>'
+      endif
     else
       assign materials_heading = 'products.product.specs.materials' | t
       assign specifications_heading = 'products.product.specs.specifications' | t
@@ -83,7 +90,7 @@
     overflow-wrap: anywhere;
   }
 
-  .product-specs :is(.product-specs__care, .product-specs__ref, .product-specs__note) {
+  .product-specs :is(.product-specs__care, .product-specs__rich, .product-specs__ref, .product-specs__note) {
     grid-column: 1 / -1;
   }
 
@@ -124,6 +131,14 @@
         {
           "value": "diamond",
           "label": "t:options.diamond_characteristics"
+        },
+        {
+          "value": "craftsmanship",
+          "label": "t:options.craftsmanship"
+        },
+        {
+          "value": "inspiration",
+          "label": "t:options.inspiration"
         }
       ],
       "default": "details"

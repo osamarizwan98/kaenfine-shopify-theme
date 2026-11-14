@@ -633,34 +633,16 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_Pd2Cr3": {
-                      "type": "text",
+                    "product_specs_Pd2Cr3": {
+                      "type": "product-specs",
                       "settings": {
-                        "text": "{{ closest.product.metafields.custom.craftsmanship }}",
-                        "width": "100%",
-                        "max_width": "none",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.75rem",
-                        "line_height": "tight",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
+                        "source": "craftsmanship"
                       },
                       "blocks": {}
                     }
                   },
                   "block_order": [
-                    "text_Pd2Cr3"
+                    "product_specs_Pd2Cr3"
                   ]
                 },
                 "accordion_row_Pd2In4": {
@@ -672,34 +654,16 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_Pd2In4": {
-                      "type": "text",
+                    "product_specs_Pd2In4": {
+                      "type": "product-specs",
                       "settings": {
-                        "text": "{{ closest.product.metafields.custom.inspiration }}",
-                        "width": "100%",
-                        "max_width": "none",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.75rem",
-                        "line_height": "tight",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
+                        "source": "inspiration"
                       },
                       "blocks": {}
                     }
                   },
                   "block_order": [
-                    "text_Pd2In4"
+                    "product_specs_Pd2In4"
                   ]
                 },
                 "accordion_row_Pd2Pk5": {
