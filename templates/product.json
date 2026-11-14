@@ -70,7 +70,7 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
-            "gap": 25,
+            "gap": 15,
             "sticky_details_desktop": true,
             "background_media": "none",
             "background_color": "",
@@ -248,7 +248,7 @@
                 "text_only": true,
                 "type_preset": "h6",
                 "alignment": "left",
-                "padding-block-start": 10,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -519,7 +519,7 @@
                 "input_border_color": "{{ settings.color_palette.foreground }}",
                 "border_width": 1,
                 "border_radius": 0,
-                "padding-block-start": 0,
+                "padding-block-start": 10,
                 "padding-block-end": 3,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -559,38 +559,243 @@
               },
               "block_order": []
             },
-            "text_aEtTtq": {
-              "type": "text",
-              "name": "t:names.product_description",
+            "accordion_Pd2Ac0": {
+              "type": "accordion",
               "settings": {
-                "text": "{{ closest.product.description }}",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
+                "icon": "caret",
+                "dividers": true,
+                "minimal_style": true,
+                "single_row_open": true,
+                "divider_color": "#d0cbc1",
+                "type_preset": "h6",
+                "background_color": "",
                 "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 35,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "accordion_row_Pd2Dt1": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "PRODUCT DETAILS",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "product_specs_Pd2Sp1": {
+                      "type": "product-specs",
+                      "settings": {
+                        "source": "details"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_specs_Pd2Sp1"
+                  ]
+                },
+                "accordion_row_Pd2Ld2": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "LAB-GROWN DIAMOND CHARACTERISTICS",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "product_specs_Pd2Sp2": {
+                      "type": "product-specs",
+                      "settings": {
+                        "source": "diamond",
+                        "note": "<p>Our lab-grown diamonds are created through an innovative process that replicates the natural conditions in which diamonds are formed. Physically, optically and chemically identical to mined diamonds, they offer the same beauty and durability. Their quality is therefore assessed according to the same international standards: the 4 Cs (Color, Clarity, Cut and Carat). The only difference lies in their origin.</p>"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_specs_Pd2Sp2"
+                  ]
+                },
+                "accordion_row_Pd2Cr3": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "CRAFTSMANSHIP",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Pd2Cr3": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.metafields.custom.craftsmanship }}",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "tight",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Pd2Cr3"
+                  ]
+                },
+                "accordion_row_Pd2In4": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "INSPIRATION",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Pd2In4": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.metafields.custom.inspiration }}",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "tight",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Pd2In4"
+                  ]
+                },
+                "accordion_row_Pd2Pk5": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "PACKAGING",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Pd2Pk5": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Designed with intention, our packaging reflects the craftsmanship of the piece within.</p><p>Each jewel is carefully presented in our signature fabric pouch and box, where it is protected to preserve its form and delicacy. The warranty and care instructions accompany every order.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "tight",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Pd2Pk5"
+                  ]
+                },
+                "accordion_row_Pd2Rs6": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "RESPONSIBILITY",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Pd2Rs6": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Every stage of our creation and production process is approached with care and consideration, from the design of our collections in Barcelona and the selection of materials to our collaboration with specialized manufacturers.</p><p>Our commitment is reflected in increasingly responsible sourcing, the use of lower-impact materials, and the traceability of our jewelry, while upholding international quality and safety standards.</p><p>All our direct suppliers are members of the Responsible Jewellery Council (RJC).</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "tight",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Pd2Rs6"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_Pd2Dt1",
+                "accordion_row_Pd2Ld2",
+                "accordion_row_Pd2Cr3",
+                "accordion_row_Pd2In4",
+                "accordion_row_Pd2Pk5",
+                "accordion_row_Pd2Rs6"
+              ]
             }
           },
           "block_order": [
             "group_icgrde",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "text_aEtTtq"
+            "accordion_Pd2Ac0"
           ]
         }
       },

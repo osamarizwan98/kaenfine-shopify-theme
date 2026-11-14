@@ -364,6 +364,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "Afegeix al carretó",
       "adding_to_cart": "S'està afegint...",
       "added_to_cart": "S'ha afegit al carretó",

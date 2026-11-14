@@ -9,7 +9,7 @@
 %}
 
 <div
-  class="accordion accordion--{{ block.id }} accordion--{{ block_settings.icon }} border-style spacing-style{% if block_settings.background_color != blank or block_settings.text_color != blank %} color-custom-{{ block.id }}{% endif %}{% if block_settings.background_color != blank %} accordion--custom-background{% endif %}{% if block_settings.dividers %} accordion--dividers{% endif %}"
+  class="accordion accordion--{{ block.id }} accordion--{{ block_settings.icon }} border-style spacing-style{% if block_settings.background_color != blank or block_settings.text_color != blank %} color-custom-{{ block.id }}{% endif %}{% if block_settings.background_color != blank %} accordion--custom-background{% endif %}{% if block_settings.dividers %} accordion--dividers{% endif %}{% if block_settings.minimal_style %} accordion--minimal{% endif %}"
   style="
     --summary-font-family: var(--font-{{ block_settings.type_preset }}--family);
      --summary-font-style: var(--font-{{ block_settings.type_preset }}--style);
@@ -63,6 +63,12 @@
       "id": "dividers",
       "label": "t:settings.dividers",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "minimal_style",
+      "label": "t:settings.minimal_style",
+      "default": false
     },
     {
       "type": "checkbox",

@@ -11,6 +11,7 @@
   "names": {
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
+    "product_specs": "Product specs",
     "404": "404",
     "custom_section": "사용자 지정 섹션",
     "icon": "아이콘",
@@ -174,6 +175,8 @@
   },
   "settings": {
     "single_row_open": "Keep only one row open",
+    "minimal_style": "Minimal style",
+    "note": "Note",
     "text_only_options": "Text-only options",
     "autoplay": "자동 재생",
     "background": "배경",
@@ -592,6 +595,8 @@
     "show_physical_stores": "실제 스토어 표시"
   },
   "options": {
+    "product_details": "Product details",
+    "diamond_characteristics": "Lab-grown diamond characteristics",
     "apple": "Apple",
     "arrow": "화살표",
     "banana": "바나나",
@@ -875,6 +880,7 @@
   },
   "content": {
     "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
+    "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
     "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
     "background_video": "배경 비디오",
     "describe_the_video_for": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",

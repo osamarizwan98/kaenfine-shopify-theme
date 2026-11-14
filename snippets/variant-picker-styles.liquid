@@ -681,6 +681,9 @@
     --variant-legend-gap: 1.125rem;
     --options-border-width: 0px;
 
+    /* Value rows keep 25px to the next block, not counting their own touch padding */
+    margin-block-end: calc(var(--padding-xs) * -1);
+
     display: flex;
     justify-content: center;
     gap: 0;
@@ -712,11 +715,22 @@
     }
   }
 
-  /* Text-only pickers: flat color chips with the selected one underlined; sold out is muted. Row gap is 45px (40px on mobile) less the chip's 3px margin */
-  .variant-picker--text .variant-option + .variant-option--swatches {
+  /* Text-only pickers: rows sit 45px apart (40px on mobile) and the picker is 5px closer to the details on mobile */
+  .variant-picker--text .variant-option + .variant-option {
     margin-block-start: 30px;
   }
 
+  @media screen and (max-width: 749px) {
+    .variant-picker--text {
+      margin-block-start: -5px;
+    }
+
+    .variant-picker--text .variant-option--buttons:not(.variant-option--swatches) {
+      --variant-legend-gap: 1.04rem;
+    }
+  }
+
+  /* Flat color chips with the selected one underlined; sold out is muted */
   .variant-picker--text .variant-option--swatches {
     --variant-picker-swatch-width: 14px;
     --variant-picker-swatch-height: 14px;

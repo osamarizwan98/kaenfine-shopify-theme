@@ -378,6 +378,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "Добавить в корзину",
       "adding_to_cart": "Добавление...",
       "added_to_cart": "Товар добавлен в корзину",

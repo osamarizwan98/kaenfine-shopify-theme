@@ -392,6 +392,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "إضافة إلى سلة التسوق",
       "adding_to_cart": "جاري الإضافة...",
       "added_to_cart": "تمت الإضافة إلى سلة التسوق",

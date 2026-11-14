@@ -364,6 +364,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "Sepete ekle",
       "adding_to_cart": "Ekleniyor...",
       "added_to_cart": "Sepete eklendi",

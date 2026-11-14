@@ -364,6 +364,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "Lisa ostukorvi",
       "adding_to_cart": "Lisamine...",
       "added_to_cart": "Lisatud ostukorvi",

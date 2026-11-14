@@ -364,6 +364,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "Legg i handlekurv",
       "adding_to_cart": "Legger til ...",
       "added_to_cart": "Lagt til i handlekurv",

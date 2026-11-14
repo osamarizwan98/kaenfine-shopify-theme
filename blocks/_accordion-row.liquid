@@ -1,6 +1,9 @@
 
 {% assign block_settings = block.settings %}
 
+{% comment %} A row whose blocks render nothing (e.g. an empty metafield) is hidden. {% endcomment %}
+{% capture row_content %}{% content_for 'blocks' %}{% endcapture %}
+
 {% capture accordion_row_children %}
   <details
     class="details"
@@ -27,15 +30,17 @@
     </summary>
 
     <div class="details-content">
-      {% content_for 'blocks' %}
+      {{ row_content }}
     </div>
   </details>
 {% endcapture %}
-{% render 'accordion-custom-component',
-  children: accordion_row_children,
-  open_by_default_on_desktop: block_settings.open_by_default,
-  open_by_default_on_mobile: block_settings.open_by_default
-%}
+{% if row_content != blank or request.design_mode %}
+  {% render 'accordion-custom-component',
+    children: accordion_row_children,
+    open_by_default_on_desktop: block_settings.open_by_default,
+    open_by_default_on_mobile: block_settings.open_by_default
+  %}
+{% endif %}
 
 {% schema %}
 {
