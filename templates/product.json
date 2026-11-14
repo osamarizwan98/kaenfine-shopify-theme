@@ -248,7 +248,7 @@
                 "text_only": true,
                 "type_preset": "h6",
                 "alignment": "left",
-                "padding-block-start": 21,
+                "padding-block-start": 10,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -527,8 +527,8 @@
               "blocks": {
                 "quantity": {
                   "type": "quantity",
-                  "static": true,
                   "disabled": true,
+                  "static": true,
                   "settings": {
                     "input_style": "default",
                     "input_background_color": "{{ settings.color_palette.background }}",
