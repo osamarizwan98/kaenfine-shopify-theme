@@ -30,6 +30,9 @@
     "text": "ટેક્સ્ટ"
   },
   "content": {
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
     "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
     "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
     "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
@@ -218,6 +221,7 @@
     "work_quickly_to_ship": "<p>અમે શક્ય તેટલી વહેલી તકે તમારો ઑર્ડર શિપ કરવા માટે ઝડપથી કામ કરીશું. એકવાર તમારો ઑર્ડર શિપ થઈ જાય, પછી તમને વધુ માહિતી સાથેનો ઇમેઇલ મળશે. ડિલિવરીનો સમય તમારા લોકેશનના આધારે બદલાય છે.</p>"
   },
   "info": {
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "આઇકનનો હંમેશાં મોબાઇલ પર ઉપયોગ થાય છે",
     "applies_on_image_only": "માત્ર ઇમેજ પર લાગુ પડે છે",
     "aspect_ratio_adjusted": "કેટલાક લેઆઉટમાં ઍડજસ્ટ કરવામાં આવે છે",
@@ -249,6 +253,7 @@
     "show_physical_stores_help": "ફિઝિકલ સ્ટોરફ્રન્ટ તરીકે ચિહ્નિત કરેલા અને પ્રોડક્ટ સ્ટૉકમાં હોય તેવા સ્થાનો પણ સૂચિબદ્ધ કરો, ભલે તેઓ પિકઅપ ઑફર ન કરતા હોય."
   },
   "names": {
+    "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
     "product_specs": "Product specs",

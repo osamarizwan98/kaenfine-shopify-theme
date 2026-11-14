@@ -30,6 +30,9 @@
     "text": "টেক্সট"
   },
   "content": {
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
     "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
     "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
     "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
@@ -218,6 +221,7 @@
     "work_quickly_to_ship": "<p>যত তাড়াতাড়ি সম্ভব আপনার অর্ডার শিপ করতে আমরা দ্রুত কাজ করব। আপনার অর্ডার শিপ করা হলে, আপনি আরও বিস্তারিত তথ্য সহ একটি ইমেইল পাবেন। আপনার লোকেশনের ওপর ভিত্তি করে ডেলিভারির সময় ভিন্ন হতে পারে।</p>"
   },
   "info": {
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "মোবাইলে সবসময় আইকন ব্যবহৃত হয়",
     "applies_on_image_only": "শুধুমাত্র ছবির ক্ষেত্রে প্রযোজ্য",
     "aspect_ratio_adjusted": "কিছু লেআউটে অ্যাডজাস্ট করা হয়েছে",
@@ -249,6 +253,7 @@
     "show_physical_stores_help": "পিকআপ অফার না করলেও, ফিজিক্যাল স্টোরফ্রন্ট হিসেবে চিহ্নিত এবং পণ্যটি স্টকে আছে এমন লোকেশনগুলোও তালিকাভুক্ত করুন।"
   },
   "names": {
+    "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
     "product_specs": "Product specs",

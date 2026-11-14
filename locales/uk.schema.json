@@ -30,6 +30,9 @@
     "text": "Текст"
   },
   "content": {
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
     "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
     "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
     "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
@@ -218,6 +221,7 @@
     "work_quickly_to_ship": "<p>Ми будемо працювати швидко, щоб відправити ваше замовлення якомога швидше. Після відправлення замовлення ви отримаєте електронний лист із подальшою інформацією. Час доставки залежить від вашого місцезнаходження.</p>"
   },
   "info": {
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "Значки завжди використовуються на мобільних пристроях",
     "applies_on_image_only": "Застосовується лише до зображень",
     "aspect_ratio_adjusted": "Скориговано в деяких макетах",
@@ -249,6 +253,7 @@
     "show_physical_stores_help": "Також показувати розташування, позначені як фізична вітрина, де товар є в наявності, навіть якщо вони не пропонують самовивіз."
   },
   "names": {
+    "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
     "product_specs": "Product specs",

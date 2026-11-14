@@ -33,6 +33,9 @@
     "text": "Text"
   },
   "content": {
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
     "advanced": "Advanced",
     "appearance": "Appearance",
@@ -226,6 +229,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "Icons are always used on mobile",
     "applies_on_image_only": "Applies to images only",
     "aspect_ratio_adjusted": "Adjusted in some layouts",
@@ -257,6 +261,7 @@
     "show_physical_stores_help": "Also list locations marked as a physical storefront that have the product in stock, even when they don't offer pickup."
   },
   "names": {
+    "info_tabs": "Info tabs",
     "column": "Column",
     "product_title": "Product title",
     "product_collection_label": "Product collection label",

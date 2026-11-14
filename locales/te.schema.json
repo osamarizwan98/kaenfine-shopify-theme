@@ -30,6 +30,9 @@
     "text": "టెక్స్ట్"
   },
   "content": {
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
     "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
     "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
     "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
@@ -218,6 +221,7 @@
     "work_quickly_to_ship": "<p>వీలైనంత త్వరగా మీ ఆర్డర్‌ను షిప్ చేయడానికి మేము వేగంగా పని చేస్తాము. మీ ఆర్డర్ షిప్ చేయబడిన తర్వాత, మీరు తదుపరి సమాచారంతో కూడిన ఇమెయిల్‌ను అందుకుంటారు. మీ లొకేషన్‌ను బట్టి డెలివరీ సమయాలు మారుతూ ఉంటాయి.</p>"
   },
   "info": {
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "మొబైల్‌లో ఎల్లప్పుడూ ఐకాన్‌లు ఉపయోగించబడతాయి",
     "applies_on_image_only": "చిత్రాలకు మాత్రమే వర్తిస్తుంది",
     "aspect_ratio_adjusted": "కొన్ని లేఅవుట్‌లలో అడ్జస్ట్ చేయబడింది",
@@ -249,6 +253,7 @@
     "show_physical_stores_help": "పికప్‌ను అందించనప్పటికీ, ఉత్పత్తి స్టాక్‌లో ఉన్న భౌతిక స్టోర్‌ఫ్రంట్‌గా మార్క్ చేయబడిన లొకేషన్‌లను కూడా జాబితా చేయండి."
   },
   "names": {
+    "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
     "product_specs": "Product specs",

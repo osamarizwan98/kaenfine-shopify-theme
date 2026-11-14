@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
     "product_specs": "Product specs",
@@ -881,6 +882,9 @@
     "direction_top_start": "왼쪽 상단"
   },
   "content": {
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
     "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
     "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
     "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
@@ -1107,6 +1111,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "carousel_layout_on_mobile": "모바일에서는 항상 캐러셀이 사용됩니다.",
     "video_alt_text": "보조 기술 사용자를 위해 비디오를 설명하세요",
     "video_autoplay": "비디오는 기본적으로 음소거됩니다",
