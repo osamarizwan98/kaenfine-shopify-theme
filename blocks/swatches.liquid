@@ -47,7 +47,12 @@
       border: 0;
     }
 
-    .variant-option__button-label--has-swatch:is(:hover, :has(:checked)) {
+    .variant-option__button-label--has-swatch,
+    .variant-option__button-label--has-swatch:hover {
+      background-color: transparent;
+    }
+
+    .variant-option__button-label--has-swatch:not(:has(:focus-visible)) {
       outline: none;
     }
   }

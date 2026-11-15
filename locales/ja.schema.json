@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_info_bar": "Product info bar",
     "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
@@ -596,6 +597,8 @@
     "show_physical_stores": "実店舗を表示"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
     "recently_viewed": "Recently viewed",
     "product_details": "Product details",
     "diamond_characteristics": "Lab-grown diamond characteristics",
@@ -883,6 +886,9 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
     "tab_1": "Tab 1",
     "tab_2": "Tab 2",
     "tab_3": "Tab 3",
@@ -1074,6 +1080,9 @@
     "introducing_p": "<p><em>新登場</em></p>"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "button_label": "今すぐ購入",
     "collapsible_row": "折りたたみ可能な行",
     "heading": "見出し",
@@ -1112,6 +1121,7 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
     "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "video_alt_text": "支援技術のユーザーのために動画の説明を記述します",
     "video_autoplay": "動画はデフォルトでミュートになります",

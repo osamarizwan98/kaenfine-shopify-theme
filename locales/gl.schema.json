@@ -30,6 +30,9 @@
     "text": "Texto"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
     "tab_1": "Tab 1",
     "tab_2": "Tab 2",
     "tab_3": "Tab 3",
@@ -221,6 +224,7 @@
     "work_quickly_to_ship": "<p>Traballaremos rapidamente para enviar o teu pedido o antes posible. Unha vez que se envíe o pedido, recibirás un correo electrónico con máis información. Os prazos de entrega varían en función da túa localización.</p>"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
     "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "As iconas úsanse sempre nos móbiles",
     "applies_on_image_only": "Aplica só a imaxes",
@@ -253,6 +257,7 @@
     "show_physical_stores_help": "Listar tamén as localizacións marcadas como escaparate físico que teñan o produto en stock, aínda que non ofrezan a recollida."
   },
   "names": {
+    "product_info_bar": "Product info bar",
     "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
@@ -419,6 +424,8 @@
     "comparison_slider": "Control desprazable de comparación"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
     "recently_viewed": "Recently viewed",
     "product_details": "Product details",
     "diamond_characteristics": "Lab-grown diamond characteristics",
@@ -1127,6 +1134,9 @@
     "show_physical_stores": "Mostrar tendas físicas"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "accordion_heading": "Título do acordeón",
     "are_purchases_final_sale": "Hai algunha compra de venda final?",
     "be_bold": "Atrévete.",

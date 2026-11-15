@@ -2,9 +2,9 @@
   Renders the parent product's material lines: stone, then base metal.
   Reads the single-line text metafields `custom.stone` and `custom.base_metal`.
   Each line renders only when it has a value, and the block renders nothing when
-  both are empty. The horizontal direction joins them with " / " and stacks them
-  on mobile. Typography, color, and padding come from `block.settings` via the
-  `text` snippet.
+  both are empty. They are joined with " / " on one line; the vertical direction
+  stacks them on desktop only. Typography, color, and padding come from
+  `block.settings` via the `text` snippet.
 
   @example
   {% content_for 'block', type: 'product-materials', id: 'materials' %}
@@ -23,11 +23,7 @@
         echo stone | escape
       endif
       if stone != blank and base_metal != blank
-        if block.settings.direction == 'horizontal'
-          echo '<span class="product-materials__separator"> / </span>'
-        else
-          echo '<br>'
-        endif
+        echo '<span class="product-materials__separator product-materials__separator--' | append: block.settings.direction | append: '"> / </span>'
       endif
       if base_metal != blank
         echo base_metal | escape
@@ -40,8 +36,8 @@
 {% render 'text', fallback_text: materials, block: block %}
 
 {% stylesheet %}
-  @media screen and (max-width: 749px) {
-    .product-materials__separator {
+  @media screen and (min-width: 750px) {
+    .product-materials__separator--vertical {
       display: block;
       height: 0;
       overflow: hidden;

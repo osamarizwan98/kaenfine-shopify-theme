@@ -30,6 +30,9 @@
     "text": "టెక్స్ట్"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
     "tab_1": "Tab 1",
     "tab_2": "Tab 2",
     "tab_3": "Tab 3",
@@ -221,6 +224,7 @@
     "work_quickly_to_ship": "<p>వీలైనంత త్వరగా మీ ఆర్డర్‌ను షిప్ చేయడానికి మేము వేగంగా పని చేస్తాము. మీ ఆర్డర్ షిప్ చేయబడిన తర్వాత, మీరు తదుపరి సమాచారంతో కూడిన ఇమెయిల్‌ను అందుకుంటారు. మీ లొకేషన్‌ను బట్టి డెలివరీ సమయాలు మారుతూ ఉంటాయి.</p>"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
     "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "మొబైల్‌లో ఎల్లప్పుడూ ఐకాన్‌లు ఉపయోగించబడతాయి",
     "applies_on_image_only": "చిత్రాలకు మాత్రమే వర్తిస్తుంది",
@@ -253,6 +257,7 @@
     "show_physical_stores_help": "పికప్‌ను అందించనప్పటికీ, ఉత్పత్తి స్టాక్‌లో ఉన్న భౌతిక స్టోర్‌ఫ్రంట్‌గా మార్క్ చేయబడిన లొకేషన్‌లను కూడా జాబితా చేయండి."
   },
   "names": {
+    "product_info_bar": "Product info bar",
     "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
@@ -419,6 +424,8 @@
     "comparison_slider": "పోలిక స్లైడర్"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
     "recently_viewed": "Recently viewed",
     "product_details": "Product details",
     "diamond_characteristics": "Lab-grown diamond characteristics",
@@ -1127,6 +1134,9 @@
     "show_physical_stores": "భౌతిక స్టోర్‌లను చూపించండి"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "accordion_heading": "అకార్డియన్ శీర్షిక",
     "are_purchases_final_sale": "ఏవైనా కొనుగోళ్లు ఫైనల్ సేలా?",
     "be_bold": "ధైర్యంగా ఉండండి.",

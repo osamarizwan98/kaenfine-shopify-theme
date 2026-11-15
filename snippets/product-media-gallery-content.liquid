@@ -434,6 +434,14 @@
           {% else %}
             {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
           {% endif %}
+          {%- if block_settings.zoom and media.media_type == 'image' -%}
+            <span
+              class="media-gallery__expand-icon desktop:hidden"
+              aria-hidden="true"
+            >
+              {{- 'icon-expand.svg' | inline_asset_content -}}
+            </span>
+          {%- endif -%}
         {% endcapture %}
         {% capture class %}
           {{ product_media_container_class }} product-media-container--{{ media.media_type }}{% if block_settings.zoom %} product-media-container--zoomable{% endif %}{% if forloop.index0 == lowest_aspect_ratio_index and block_settings.aspect_ratio == 'adapt' %} product-media-container--tallest{% endif %}
@@ -951,6 +959,16 @@
     color: #fff;
     mix-blend-mode: difference;
     z-index: var(--layer-raised);
+  }
+
+  .media-gallery__expand-icon {
+    position: absolute;
+    inset-block-end: var(--padding-lg);
+    inset-inline-end: var(--padding-lg);
+    z-index: var(--layer-flat);
+    display: flex;
+    color: var(--color-foreground);
+    pointer-events: none;
   }
 
   /* Mobile thumbnails styling */

@@ -33,6 +33,9 @@
     "text": "Text"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
     "tab_1": "Tab 1",
     "tab_2": "Tab 2",
     "tab_3": "Tab 3",
@@ -229,6 +232,7 @@
     "work_quickly_to_ship": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
     "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "Icons are always used on mobile",
     "applies_on_image_only": "Applies to images only",
@@ -261,6 +265,7 @@
     "show_physical_stores_help": "Also list locations marked as a physical storefront that have the product in stock, even when they don't offer pickup."
   },
   "names": {
+    "product_info_bar": "Product info bar",
     "info_tabs": "Info tabs",
     "column": "Column",
     "product_title": "Product title",
@@ -434,6 +439,8 @@
     "comparison_slider": "Comparison slider"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
     "recently_viewed": "Recently viewed",
     "product_details": "Product details",
     "diamond_characteristics": "Lab-grown diamond characteristics",
@@ -1225,6 +1232,9 @@
     "bottom_row_text": "Bottom row text"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "accordion_heading": "Accordion heading",
     "are_purchases_final_sale": "Are any purchases final sale?",
     "be_bold": "Be bold.",

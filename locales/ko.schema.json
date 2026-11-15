@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_info_bar": "Product info bar",
     "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
@@ -596,6 +597,8 @@
     "show_physical_stores": "실제 스토어 표시"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
     "recently_viewed": "Recently viewed",
     "product_details": "Product details",
     "diamond_characteristics": "Lab-grown diamond characteristics",
@@ -883,6 +886,9 @@
     "direction_top_start": "왼쪽 상단"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
     "tab_1": "Tab 1",
     "tab_2": "Tab 2",
     "tab_3": "Tab 3",
@@ -1074,6 +1080,9 @@
     "featured_collection_h3": "<h3>추천 컬렉션</h3>"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "collapsible_row": "축소 가능 행",
     "button_label": "지금 쇼핑하기",
     "heading": "제목",
@@ -1112,6 +1121,7 @@
     "disclosures": "고지 사항"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
     "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "carousel_layout_on_mobile": "모바일에서는 항상 캐러셀이 사용됩니다.",
     "video_alt_text": "보조 기술 사용자를 위해 비디오를 설명하세요",

@@ -59,6 +59,7 @@
     section--{{ section.settings.section_width }}
     {% if section.settings.background_color != blank %}color-custom-{{ section.id }}{% endif %}
     section-resource-list
+    {% if template.name == 'product' or recently_viewed %}section-resource-list--product{% endif %}
     spacing-style
     gap-style
   "
@@ -157,6 +158,22 @@
   @media screen and (max-width: 749px) {
     .section-resource-list__header .text-block {
       padding-inline-start: calc(var(--padding-inline-start) * var(--spacing-scale-md));
+    }
+  }
+
+  /* Product page: exactly 4 cards fill the row on desktop, no overrun */
+  .section-resource-list--product.section--full-width .resource-list__carousel {
+    --peek-next-slide-size: 0px;
+  }
+
+  /* Product page: card text inset follows the mobile spacing scale (20px -> 14px) */
+  @media screen and (max-width: 749px) {
+    .section-resource-list--product .product-card .text-block {
+      padding-inline-start: calc(var(--padding-inline-start) * var(--spacing-scale-md));
+    }
+
+    .section-resource-list--product product-swatches > * {
+      --product-swatches-padding-inline-start: 15px;
     }
   }
 {% endstylesheet %}

@@ -9,6 +9,7 @@
  */
 {
   "names": {
+    "product_info_bar": "Product info bar",
     "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
@@ -596,6 +597,8 @@
     "show_physical_stores": "Mostrar tiendas físicas"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
     "recently_viewed": "Recently viewed",
     "product_details": "Product details",
     "diamond_characteristics": "Lab-grown diamond characteristics",
@@ -883,6 +886,9 @@
     "input_field": "Campo de entrada"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
     "tab_1": "Tab 1",
     "tab_2": "Tab 2",
     "tab_3": "Tab 3",
@@ -1074,6 +1080,9 @@
     "shop_collection": "<p>Descubre nuestra colección seleccionada con favoritos seleccionados a mano que combinan estilo y calidad.</p>"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "button_label": "Comprar ahora",
     "collapsible_row": "Fila plegable",
     "heading": "Título",
@@ -1112,6 +1121,7 @@
     "disclosures": "Divulgaciones"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
     "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "carousel_layout_on_mobile": "En dispositivos móviles siempre se usa el carrusel",
     "video_alt_text": "Describe el video para personas usuarias de tecnologías de asistencia",

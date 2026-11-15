@@ -30,6 +30,9 @@
     "text": "Text"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
     "tab_1": "Tab 1",
     "tab_2": "Tab 2",
     "tab_3": "Tab 3",
@@ -221,6 +224,7 @@
     "work_quickly_to_ship": "<p>Treballarem ràpidament per enviar la comanda al més aviat possible. Quan s'hagi enviat la comanda, rebràs un correu electrònic amb més informació. Els terminis de lliurament varien en funció de la teva ubicació.</p>"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
     "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "Les icones s'utilitzen sempre a la versió per a mòbils",
     "applies_on_image_only": "Només s'aplica a les imatges",
@@ -253,6 +257,7 @@
     "show_physical_stores_help": "Mostra també les ubicacions marcades com a aparador físic que tenen el producte en estoc, encara que no ofereixin recollida."
   },
   "names": {
+    "product_info_bar": "Product info bar",
     "info_tabs": "Info tabs",
     "product_collection_label": "Product collection label",
     "product_materials": "Product materials",
@@ -419,6 +424,8 @@
     "comparison_slider": "Control lliscant de comparació"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
     "recently_viewed": "Recently viewed",
     "product_details": "Product details",
     "diamond_characteristics": "Lab-grown diamond characteristics",
@@ -1127,6 +1134,9 @@
     "show_physical_stores": "Mostra les botigues físiques"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "accordion_heading": "Encapçalament de l'acordió",
     "are_purchases_final_sale": "Hi ha alguna compra que sigui de venda final?",
     "be_bold": "Sigues atrevit.",
