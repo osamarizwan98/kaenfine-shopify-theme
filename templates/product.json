@@ -1075,7 +1075,7 @@
         "gap": 20,
         "background_color": "",
         "padding-block-start": 80,
-        "padding-block-end": 40
+        "padding-block-end": 0
       }
     },
     "recently_viewed": {
