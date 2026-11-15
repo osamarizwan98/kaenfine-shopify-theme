@@ -18,6 +18,156 @@
     width: 100%;
   }
 
+  /* Popup link (e.g. size guide) on the option label row. Its drawer is a flat panel over the product details column */
+  .variant-option__children {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+
+    .popup-link__button {
+      text-decoration: underline;
+
+      &:hover {
+        color: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+      }
+    }
+
+    .popup-link__button svg {
+      display: none;
+    }
+
+    .popup-link__content {
+      padding-block: var(--padding-2xl) var(--padding-lg);
+      padding-inline: 1.375rem var(--padding-lg);
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+
+      &::backdrop {
+        background: transparent;
+        backdrop-filter: none;
+        animation: none;
+      }
+    }
+
+    .popup-link__content .popup-link__close {
+      inset-block-start: calc(var(--padding-2xl) - (var(--minimum-touch-target) - 1rem) / 2);
+      inset-inline-end: calc(var(--padding-lg) - (var(--minimum-touch-target) - 1rem) / 2);
+    }
+
+    /* Thin 1px close cross and chevron */
+    .popup-link__close svg,
+    .icon-caret svg {
+      display: none;
+    }
+
+    .popup-link__close::before,
+    .popup-link__close::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 1.4rem;
+      height: 1px;
+      background: currentcolor;
+      transform: rotate(45deg);
+    }
+
+    .popup-link__close::after {
+      transform: rotate(-45deg);
+    }
+
+    .icon-caret {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::after {
+        content: '';
+        width: 0.575rem;
+        height: 0.575rem;
+        border: solid currentcolor;
+        border-width: 0 1px 1px 0;
+        transform: translateY(-25%) rotate(45deg);
+        transition: transform var(--animation-speed) var(--animation-easing);
+      }
+    }
+
+    details[open] > summary .icon-caret::after {
+      transform: translateY(25%) rotate(-135deg);
+    }
+
+    .accordion--dividers accordion-custom:first-child .details {
+      border-block-start-width: 0;
+    }
+
+    .details__header {
+      gap: var(--gap-sm);
+      min-height: 0;
+      padding-block: 1.375rem;
+    }
+
+    details[open] > summary {
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 749px) {
+      .popup-link__content--drawer {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+
+  /* A fieldset content box starts below its legend, so lift the link by the legend height and gap */
+  fieldset.variant-option > .variant-option__children {
+    inset-block-start: calc(-1lh - var(--variant-legend-gap, var(--margin-xs)));
+  }
+
+  @media screen and (min-width: 750px) {
+    @supports (anchor-name: --a) {
+      .product-details {
+        anchor-name: --product-details;
+      }
+
+      .variant-option__children .popup-link__content--drawer {
+        position-anchor: --product-details;
+        inset-block: 0;
+        left: anchor(left);
+        width: anchor-size(width);
+        max-width: none;
+        margin: 0;
+      }
+    }
+  }
+
+  .size-table {
+    width: 100%;
+    margin-block-start: var(--padding-xs);
+    border-collapse: collapse;
+    border-style: hidden;
+    font-size: var(--font-size--2xs);
+    text-align: center;
+  }
+
+  .size-table :is(th, td) {
+    padding: var(--padding-md);
+    border: var(--style-border-width) solid var(--color-border);
+    font-weight: normal;
+  }
+
+  .size-table--dense :is(th, td) {
+    padding: var(--padding-xs);
+  }
+
+  .size-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    margin-block-start: var(--margin-xs);
+    object-fit: cover;
+  }
+
   .variant-picker[data-shopify-visual-preview] {
     min-width: 300px;
     padding-inline-start: max(4px, var(--padding-inline-start));
@@ -111,6 +261,8 @@
     --options-border-radius: var(--variant-picker-button-radius);
     --options-border-width: var(--variant-picker-button-border-width);
     --variant-option-padding-inline: var(--padding-md);
+
+    position: relative;
   }
 
   .variant-option + .variant-option {
@@ -147,7 +299,7 @@
 
   .variant-option--buttons legend {
     padding: 0;
-    margin-block-end: var(--margin-xs);
+    margin-block-end: var(--variant-legend-gap, var(--margin-xs));
   }
 
   .variant-option--buttons legend,
@@ -522,5 +674,104 @@
   .variant-option__button-label--has-swatch:has([data-option-available='false']):has(:checked),
   .variant-option__button-label--has-swatch:has([data-option-available='false']):has(:checked):hover {
     background-color: inherit;
+  }
+
+  /* Text-only options: unboxed values, centered and evenly spaced; bold on hover and when selected, muted when sold out */
+  .variant-picker--text .variant-option--buttons:not(.variant-option--swatches) {
+    --variant-legend-gap: 1.125rem;
+    --options-border-width: 0px;
+
+    /* Value rows keep 25px to the next block, not counting their own touch padding */
+    margin-block-end: calc(var(--padding-xs) * -1);
+
+    display: flex;
+    justify-content: center;
+    gap: 0;
+
+    .variant-option__button-label {
+      flex: 0 0 auto;
+      min-width: 0;
+      min-height: 0;
+      padding: var(--padding-xs) var(--padding-lg);
+      background: none;
+    }
+
+    .variant-option__button-label__pill {
+      display: none;
+    }
+
+    .variant-option__button-label:is(:hover, :has(:checked)) {
+      background: none;
+      color: var(--color-variant-text);
+      font-weight: bold;
+    }
+
+    .variant-option__button-label:has([data-option-available='false']) {
+      color: rgb(var(--color-variant-text-rgb) / var(--opacity-30));
+    }
+
+    .variant-option__button-label svg {
+      display: none;
+    }
+  }
+
+  /* Text-only pickers: rows sit 45px apart (40px on mobile) and the picker is 5px closer to the details on mobile */
+  .variant-picker--text .variant-option + .variant-option {
+    margin-block-start: 30px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .variant-picker--text {
+      margin-block-start: -5px;
+    }
+
+    .variant-picker--text .variant-option--buttons:not(.variant-option--swatches) {
+      --variant-legend-gap: 1.04rem;
+    }
+  }
+
+  /* Flat color chips with the selected one underlined; sold out is muted */
+  .variant-picker--text .variant-option--swatches {
+    --variant-picker-swatch-width: 14px;
+    --variant-picker-swatch-height: 14px;
+    --variant-picker-swatch-radius: 0px;
+
+    gap: 0 10px;
+
+    .swatch {
+      border-width: 0;
+    }
+
+    .variant-option__button-label--has-swatch {
+      margin-block-start: 3px;
+      padding-block-end: 8px;
+      border: 1px solid transparent;
+    }
+
+    .variant-option__button-label--has-swatch:not(:has(:focus-visible)) {
+      outline: none;
+    }
+
+    .variant-option__button-label--has-swatch,
+    .variant-option__button-label--has-swatch:hover {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    .variant-option__button-label--has-swatch:has(:checked),
+    .variant-option__button-label--has-swatch:has(:checked):hover {
+      border-color: transparent;
+      border-block-end-color: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+    }
+
+    .variant-option__button-label--has-swatch:has([data-option-available='false']) {
+      svg {
+        display: none;
+      }
+
+      .swatch {
+        opacity: var(--opacity-30);
+      }
+    }
   }
 {% endstylesheet %}

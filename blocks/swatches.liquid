@@ -13,12 +13,48 @@
 
 {% stylesheet %}
   product-swatches {
+    --variant-picker-swatch-radius: 0px;
+
     width: 100%;
     display: flex;
     position: relative;
     overflow: hidden;
     gap: 0;
     flex-shrink: 0;
+
+    overflow-list::part(list) {
+      gap: 10px;
+
+      @media screen and (max-width: 749px) {
+        gap: 8px;
+      }
+    }
+
+    .variant-option__swatch {
+      padding-inline: 1px;
+      padding-block-end: 8px;
+      border-block-end: 1px solid transparent;
+    }
+
+    .variant-option__swatch:has(:checked) {
+      border-block-end-color: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+    }
+
+    .swatch {
+      --swatch-width: 14px;
+      --swatch-height: 14px;
+
+      border: 0;
+    }
+
+    .variant-option__button-label--has-swatch,
+    .variant-option__button-label--has-swatch:hover {
+      background-color: transparent;
+    }
+
+    .variant-option__button-label--has-swatch:not(:has(:focus-visible)) {
+      outline: none;
+    }
   }
 {% endstylesheet %}
 
@@ -38,7 +74,7 @@
     "
     {{ block.shopify_attributes }}
   >
-    {% render 'variant-swatches', product_resource: closest.product %}
+    {% render 'variant-swatches', product_resource: closest.product, has_option_selected: true %}
   </product-swatches>
 {% endif %}
 

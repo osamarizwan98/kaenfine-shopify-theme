@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "product_info_bar": "Product info bar",
+    "info_tabs": "Info tabs",
+    "product_collection_label": "Product collection label",
+    "product_materials": "Product materials",
+    "product_specs": "Product specs",
     "404": "404",
     "colors": "調色盤",
     "custom_section": "自訂區段",
@@ -171,6 +176,10 @@
     "disclosures": "資訊揭露"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "minimal_style": "Minimal style",
+    "note": "Note",
+    "text_only_options": "Text-only options",
     "alignment": "對齊",
     "autoplay": "自動播放",
     "background": "背景",
@@ -588,6 +597,13 @@
     "show_physical_stores": "顯示實體店面"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
+    "recently_viewed": "Recently viewed",
+    "product_details": "Product details",
+    "diamond_characteristics": "Lab-grown diamond characteristics",
+    "craftsmanship": "Craftsmanship",
+    "inspiration": "Inspiration",
     "apple": "Apple",
     "arrow": "箭頭",
     "auto": "自動",
@@ -870,6 +886,15 @@
     "direction_top_start": "左上"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
+    "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
+    "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
+    "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
     "advanced": "進階",
     "background_image": "背景圖片",
     "background_video": "背景影片",
@@ -1055,6 +1080,9 @@
     "introducing_p": "<p><em>全新推出</em></p>"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "button_label": "立即選購",
     "collapsible_row": "可摺疊列",
     "heading": "標題",
@@ -1093,6 +1121,8 @@
     "disclosures": "資訊揭露"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "carousel_layout_on_mobile": "在行動裝置上一律使用輪播",
     "video_alt_text": "為使用輔助技術的使用者描述影片",
     "video_autoplay": "影片預設為靜音播放",

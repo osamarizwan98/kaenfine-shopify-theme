@@ -63,5 +63,19 @@
     .product-card slideshow-arrows .slideshow-control {
       display: none;
     }
+
+    /* List cards step text down on mobile (12px -> 10px). */
+    .resource-list .product-card :is(.custom-font-size, .custom-font-size > *) {
+      font-size: calc(var(--font-size) * 5 / 6);
+    }
+
+    /* Text inset follows the mobile spacing scale (20px -> 14px); swatches shift with it. */
+    .resource-list .product-card .text-block {
+      padding-inline-start: calc(var(--padding-inline-start) * var(--spacing-scale-md));
+    }
+
+    .resource-list .product-card product-swatches {
+      margin-inline-start: -7px;
+    }
   }
 {% endstylesheet %}

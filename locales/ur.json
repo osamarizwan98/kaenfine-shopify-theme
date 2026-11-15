@@ -364,6 +364,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "کارٹ میں شامل کریں",
       "adding_to_cart": "شامل کیا جا رہا ہے...",
       "added_to_cart": "کارٹ میں شامل کر دیا گیا",

@@ -1,0 +1,257 @@
+{%- doc -%}
+  Renders up to three tabs with static, merchant-edited content.
+  In a tab's rich text, a bulleted item written as "Label | Value" becomes a label/value row.
+  Tabs missing a title or content are skipped. Renders nothing when no tab is complete.
+
+  @example
+  {% content_for 'block', type: 'info-tabs', id: 'product-info-tabs' %}
+{%- enddoc -%}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign complete = ''
+
+  for index in (1..3)
+    assign title_key = 'tab_' | append: index | append: '_title'
+    assign content_key = 'tab_' | append: index | append: '_content'
+
+    if block_settings[title_key] != blank and block_settings[content_key] != blank
+      assign complete = complete | append: index | append: ','
+    endif
+  endfor
+
+  assign tab_indexes = complete | split: ','
+-%}
+
+{%- if tab_indexes.size > 0 -%}
+  <script
+    src="{{ 'info-tabs.js' | asset_url }}"
+    type="module"
+    fetchpriority="low"
+  ></script>
+
+  <info-tabs-component
+    class="info-tabs spacing-style"
+    style="{% render 'spacing-style', settings: block_settings %}"
+    {{ block.shopify_attributes }}
+  >
+    <div
+      class="info-tabs__list"
+      role="tablist"
+    >
+      {%- for index in tab_indexes -%}
+        {%- assign title_key = 'tab_' | append: index | append: '_title' -%}
+        <button
+          type="button"
+          class="info-tabs__tab"
+          id="InfoTab-{{ block.id }}-{{ index }}"
+          role="tab"
+          aria-selected="{{ forloop.first }}"
+          aria-controls="InfoPanel-{{ block.id }}-{{ index }}"
+          {% unless forloop.first %}
+            tabindex="-1"
+          {% endunless %}
+          ref="tabs[]"
+          on:click="/select"
+          on:keydown="/handleKeyDown"
+        >
+          {{- block_settings[title_key] | escape -}}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    {%- for index in tab_indexes -%}
+      {%- assign content_key = 'tab_' | append: index | append: '_content' -%}
+      <div
+        class="info-tabs__panel"
+        id="InfoPanel-{{ block.id }}-{{ index }}"
+        role="tabpanel"
+        aria-labelledby="InfoTab-{{ block.id }}-{{ index }}"
+        {% unless forloop.first %}
+          hidden
+        {% endunless %}
+        ref="panels[]"
+      >
+        {{- block_settings[content_key] | replace: '<li>', '<li><span>' | replace: ' | ', '</span><span>' | replace: '</li>', '</span></li>' -}}
+      </div>
+    {%- endfor -%}
+  </info-tabs-component>
+{%- endif -%}
+
+{% stylesheet %}
+  .info-tabs {
+    display: block;
+    font-size: var(--font-size--2xs);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .info-tabs__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 8px;
+  }
+
+  .info-tabs__tab {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: start;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .info-tabs__tab:hover {
+    opacity: var(--opacity-70);
+  }
+
+  .info-tabs__tab[aria-selected='true'] {
+    font-weight: 700;
+  }
+
+  .info-tabs__panel {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 32px;
+    padding-block-start: 42px;
+  }
+
+  .info-tabs__panel[hidden] {
+    display: none;
+  }
+
+  .info-tabs__panel > * {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .info-tabs__panel > :last-child {
+    margin-block-end: 0;
+  }
+
+  .info-tabs__panel p:has(> strong:only-child) {
+    margin-block-end: 8px;
+  }
+
+  .info-tabs__panel a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .info-tabs__panel ul {
+    display: contents;
+    list-style: none;
+  }
+
+  .info-tabs__panel li {
+    display: contents;
+  }
+
+  .info-tabs__panel li > span {
+    min-width: 0;
+    margin-block-end: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .info-tabs__panel li:first-child > span {
+    margin-block-start: 4px;
+  }
+
+  .info-tabs__panel li > span:only-child {
+    grid-column: 1 / -1;
+  }
+
+  .info-tabs__panel ul + p {
+    margin-block-start: 16px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.info_tabs",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.info_tabs_rows"
+    },
+    {
+      "type": "header",
+      "content": "t:content.tab_1"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_title",
+      "label": "t:settings.title"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_1_content",
+      "label": "t:settings.content"
+    },
+    {
+      "type": "header",
+      "content": "t:content.tab_2"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_title",
+      "label": "t:settings.title"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_2_content",
+      "label": "t:settings.content"
+    },
+    {
+      "type": "header",
+      "content": "t:content.tab_3"
+    },
+    {
+      "type": "text",
+      "id": "tab_3_title",
+      "label": "t:settings.title"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_3_content",
+      "label": "t:settings.content"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.info_tabs"
+    }
+  ]
+}
+{% endschema %}

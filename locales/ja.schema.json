@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "product_info_bar": "Product info bar",
+    "info_tabs": "Info tabs",
+    "product_collection_label": "Product collection label",
+    "product_materials": "Product materials",
+    "product_specs": "Product specs",
     "404": "404",
     "colors": "カラーパレット",
     "custom_section": "カスタムセクション",
@@ -171,6 +176,10 @@
     "disclosures": "開示情報"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "minimal_style": "Minimal style",
+    "note": "Note",
+    "text_only_options": "Text-only options",
     "alignment": "配置",
     "autoplay": "自動再生",
     "background": "背景",
@@ -588,6 +597,13 @@
     "show_physical_stores": "実店舗を表示"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
+    "recently_viewed": "Recently viewed",
+    "product_details": "Product details",
+    "diamond_characteristics": "Lab-grown diamond characteristics",
+    "craftsmanship": "Craftsmanship",
+    "inspiration": "Inspiration",
     "apple": "Apple",
     "arrow": "矢印",
     "auto": "自動",
@@ -870,6 +886,15 @@
     "input_field": "入力フィールド"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
+    "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
+    "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
+    "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
     "advanced": "高度な設定",
     "background_image": "背景画像",
     "background_video": "背景動画",
@@ -1055,6 +1080,9 @@
     "introducing_p": "<p><em>新登場</em></p>"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "button_label": "今すぐ購入",
     "collapsible_row": "折りたたみ可能な行",
     "heading": "見出し",
@@ -1093,6 +1121,8 @@
     "disclosures": "開示情報"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "video_alt_text": "支援技術のユーザーのために動画の説明を記述します",
     "video_autoplay": "動画はデフォルトでミュートになります",
     "video_external": "YouTubeまたはVimeoのURLを使用します",

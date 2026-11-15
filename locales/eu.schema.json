@@ -30,6 +30,15 @@
     "text": "Testua"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
+    "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
+    "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
+    "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
     "visible_if_collection_has_more_products": "Ikusgai, bildumak erakutsitakoak baino produktu gehiago baditu",
     "advanced": "Aurreratua",
     "appearance": "Itxura",
@@ -215,6 +224,8 @@
     "work_quickly_to_ship": "<p>Azkar egingo dugu lan zure eskaera ahalik eta lasterren bidaltzeko. Eskaera bidalitakoan, mezu elektroniko bat jasoko duzu informazio gehiagorekin. Entregatzeko denborak zure kokapenaren araberakoak dira.</p>"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "actions_display_style": "Gailu mugikorretan beti erabiltzen dira ikonoak",
     "applies_on_image_only": "Irudietan soilik aplikatzen da",
     "aspect_ratio_adjusted": "Diseinu batzuetan doituta",
@@ -246,6 +257,11 @@
     "show_physical_stores_help": "Zerrendatu produktua izakinetan duten eta erakusleiho fisiko gisa markatutako kokapenak ere, bilketa eskaintzen ez badute ere."
   },
   "names": {
+    "product_info_bar": "Product info bar",
+    "info_tabs": "Info tabs",
+    "product_collection_label": "Product collection label",
+    "product_materials": "Product materials",
+    "product_specs": "Product specs",
     "column": "Zutabea",
     "product_title": "Produktuaren izenburua",
     "custom_liquid": "Liquid pertsonalizatua",
@@ -408,6 +424,13 @@
     "comparison_slider": "Konparatzeko graduatzailea"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
+    "recently_viewed": "Recently viewed",
+    "product_details": "Product details",
+    "diamond_characteristics": "Lab-grown diamond characteristics",
+    "craftsmanship": "Craftsmanship",
+    "inspiration": "Inspiration",
     "above_carousel": "Karruselaren gainean",
     "accent": "Azentua",
     "all": "Guztiak",
@@ -690,6 +713,10 @@
     "below_media": "Multimedia-edukiaren azpian"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "minimal_style": "Minimal style",
+    "note": "Note",
+    "text_only_options": "Text-only options",
     "accordion": "Akordeoia",
     "account": "Kontua",
     "actions_display_style": "Menuaren estiloa",
@@ -1107,6 +1134,9 @@
     "show_physical_stores": "Erakutsi denda fisikoak"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "accordion_heading": "Akordeoiaren izenburua",
     "are_purchases_final_sale": "Erosketaren bat behin betiko salmenta al da?",
     "be_bold": "Izan ausarta.",

@@ -364,6 +364,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "కార్ట్‌కు జోడించండి",
       "adding_to_cart": "జోడిస్తోంది...",
       "added_to_cart": "కార్ట్‌కు జోడించబడింది",

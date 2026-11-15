@@ -9,6 +9,11 @@
  */
 {
   "names": {
+    "product_info_bar": "Product info bar",
+    "info_tabs": "Info tabs",
+    "product_collection_label": "Product collection label",
+    "product_materials": "Product materials",
+    "product_specs": "Product specs",
     "404": "404",
     "custom_section": "Section personnalisée",
     "icon": "Icône",
@@ -171,6 +176,10 @@
     "disclosures": "Divulgations"
   },
   "settings": {
+    "single_row_open": "Keep only one row open",
+    "minimal_style": "Minimal style",
+    "note": "Note",
+    "text_only_options": "Text-only options",
     "autoplay": "Lecture automatique",
     "background": "Arrière-plan",
     "border_radius": "Rayon de la bordure",
@@ -588,6 +597,13 @@
     "show_physical_stores": "Afficher les magasins physiques"
   },
   "options": {
+    "progress_bar": "Progress bar",
+    "shield": "Shield",
+    "recently_viewed": "Recently viewed",
+    "product_details": "Product details",
+    "diamond_characteristics": "Lab-grown diamond characteristics",
+    "craftsmanship": "Craftsmanship",
+    "inspiration": "Inspiration",
     "apple": "Pomme",
     "arrow": "Flèche",
     "banana": "Banane",
@@ -870,6 +886,15 @@
     "input_field": "Champ de saisie"
   },
   "content": {
+    "item_1": "Item 1",
+    "item_2": "Item 2",
+    "item_3": "Item 3",
+    "tab_1": "Tab 1",
+    "tab_2": "Tab 2",
+    "tab_3": "Tab 3",
+    "resource_reference_product_collection_label": "Displays the collection from the product's custom.display_collection metafield, or its first collection, as a link. Hidden when neither exists.",
+    "resource_reference_product_specs": "Displays the product's custom.materials, custom.specifications, custom.care and custom.diamond_characteristics metafields. Hidden when they are empty.",
+    "resource_reference_product_materials": "Displays the product's custom.stone and custom.base_metal metafields, one per line. Empty lines are hidden.",
     "background_video": "Vidéo de fond",
     "describe_the_video_for": "Décrivez la vidéo pour les clients utilisant des lecteurs d’écran. [En savoir plus](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video-block)",
     "width_is_automatically_optimized": "La largeur est automatiquement optimisée pour les appareils mobiles.",
@@ -1055,6 +1080,9 @@
     "featured_collection_h3": "<h3>Collection en vedette</h3>"
   },
   "text_defaults": {
+    "two_year_warranty": "2 Year Warranty",
+    "free_returns_exchanges": "Free Returns & Exchanges",
+    "free_shipping": "Free Shipping",
     "collapsible_row": "Rangée réductible",
     "button_label": "Acheter maintenant",
     "heading": "Titre",
@@ -1093,6 +1121,8 @@
     "disclosures": "Divulgations"
   },
   "info": {
+    "product_info_bar": "Shows on mobile only, directly below the product media. Items without text are hidden.",
+    "info_tabs_rows": "In the content, write a bulleted list item as \"Label | Value\" to show a label and value row.",
     "carousel_layout_on_mobile": "Le carrousel est toujours utilisé sur mobile",
     "video_alt_text": "Décrivez la vidéo pour les utilisateurs de technologies d’assistance",
     "video_autoplay": "Les vidéos seront mises en sourdine par défaut",

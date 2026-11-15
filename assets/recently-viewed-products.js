@@ -1,3 +1,6 @@
+import { Component } from '@theme/component';
+import { morphSection, sectionRenderer } from '@theme/section-renderer';
+
 /**
  * Updates the recently viewed products in localStorage.
  */
@@ -32,4 +35,44 @@ export class RecentlyViewed {
   static getProducts() {
     return JSON.parse(localStorage.getItem(this.#STORAGE_KEY) || '[]');
   }
+}
+
+/**
+ * Renders a product list section with the stored recently viewed products,
+ * excluding the product currently on the page.
+ */
+class RecentlyViewedProductsComponent extends Component {
+  #abortController = new AbortController();
+
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.dataset.loaded !== 'true') this.#load();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.#abortController.abort();
+  }
+
+  async #load() {
+    const { sectionId, productId } = this.dataset;
+    const productIds = RecentlyViewed.getProducts().filter((/** @type {string} */ id) => id !== productId);
+    if (!sectionId || productIds.length === 0) return;
+
+    const url = new URL(Theme.routes.search_url, location.origin);
+    url.searchParams.set('q', productIds.map((id) => `id:${id}`).join(' OR '));
+    url.searchParams.set('type', 'product');
+
+    try {
+      const html = await sectionRenderer.getSectionHTML(sectionId, false, url, this.#abortController.signal);
+      if (this.#abortController.signal.aborted) return;
+      await morphSection(sectionId, html);
+    } catch (error) {
+      if (!this.#abortController.signal.aborted) console.error('Recently viewed products error:', error);
+    }
+  }
+}
+
+if (!customElements.get('recently-viewed-products')) {
+  customElements.define('recently-viewed-products', RecentlyViewedProductsComponent);
 }

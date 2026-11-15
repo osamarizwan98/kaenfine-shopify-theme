@@ -1,0 +1,159 @@
+{%- doc -%}
+  Renders product spec rows in one label/value grid so every value shares a column.
+
+  Source "details": Materials (custom.materials), Specifications (custom.specifications), Care (custom.care)
+  and the SKU of the selected variant as the reference.
+  Source "diamond": rows from custom.diamond_characteristics followed by the note setting.
+  Sources "craftsmanship" and "inspiration": the rich text metafield of the same name.
+  Spec metafields hold one "Label: Value" per line. Renders nothing when every source is empty.
+
+  @example
+  {% content_for 'block', type: 'product-specs', id: 'product-details-specs' %}
+{%- enddoc -%}
+
+{% liquid
+  assign custom = closest.product.metafields.custom
+  assign specs = ''
+
+  capture specs
+    if block.settings.source == 'diamond'
+      render 'product-spec-rows', lines: custom.diamond_characteristics.value
+    elsif block.settings.source == 'craftsmanship' or block.settings.source == 'inspiration'
+      assign rich_text = custom[block.settings.source]
+      if rich_text != blank
+        assign rich_html = rich_text | metafield_tag
+        echo '<div class="product-specs__rich">' | append: rich_html | append: '</div>'
+      endif
+    else
+      assign materials_heading = 'products.product.specs.materials' | t
+      assign specifications_heading = 'products.product.specs.specifications' | t
+      render 'product-spec-rows', heading: materials_heading, lines: custom.materials.value
+      render 'product-spec-rows', heading: specifications_heading, lines: custom.specifications.value
+
+      if custom.care != blank
+        assign care_heading = 'products.product.specs.care' | t
+        assign care_html = custom.care | metafield_tag
+        echo '<h4 class="product-specs__heading">' | append: care_heading | append: '</h4>'
+        echo '<div class="product-specs__care">' | append: care_html | append: '</div>'
+      endif
+
+      assign sku = closest.product.selected_or_first_available_variant.sku | escape
+      if sku != blank
+        assign reference = 'products.product.specs.reference' | t: sku: sku
+        echo '<p class="product-specs__ref">' | append: reference | append: '</p>'
+      endif
+    endif
+  endcapture
+%}
+
+{% if specs != blank %}
+  <div
+    class="product-specs"
+    {{ block.shopify_attributes }}
+  >
+    {{ specs }}
+    {% if block.settings.source == 'diamond' and block.settings.note != blank %}
+      <div class="product-specs__note">{{ block.settings.note }}</div>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .product-specs {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 32px;
+    font-size: var(--font-size--2xs);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .product-specs__heading {
+    grid-column: 1 / -1;
+    margin: 0 0 20px;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: uppercase;
+  }
+
+  .product-specs__heading:not(:first-child) {
+    margin-block-start: 32px;
+  }
+
+  .product-specs__list,
+  .product-specs__row {
+    display: contents;
+  }
+
+  .product-specs__row :is(dt, dd) {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .product-specs :is(.product-specs__care, .product-specs__rich, .product-specs__ref, .product-specs__note) {
+    grid-column: 1 / -1;
+  }
+
+  .product-specs__care p,
+  .product-specs__note p {
+    margin: 0;
+  }
+
+  .product-specs__ref {
+    margin: 32px 0 0;
+    font-weight: 400;
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-30));
+  }
+
+  .product-specs__note {
+    margin-block-start: 20px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_specs",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:content.resource_reference_product_specs"
+    },
+    {
+      "type": "select",
+      "id": "source",
+      "label": "t:settings.content",
+      "options": [
+        {
+          "value": "details",
+          "label": "t:options.product_details"
+        },
+        {
+          "value": "diamond",
+          "label": "t:options.diamond_characteristics"
+        },
+        {
+          "value": "craftsmanship",
+          "label": "t:options.craftsmanship"
+        },
+        {
+          "value": "inspiration",
+          "label": "t:options.inspiration"
+        }
+      ],
+      "default": "details"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "t:settings.note",
+      "visible_if": "{{ block.settings.source == 'diamond' }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_specs"
+    }
+  ]
+}
+{% endschema %}

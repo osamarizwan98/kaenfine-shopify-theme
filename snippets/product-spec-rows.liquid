@@ -1,0 +1,33 @@
+{%- doc -%}
+  Renders label/value rows from a multi-line metafield value, one "Label: Value" per line.
+  Lines without a colon or without a value are skipped. Renders nothing when no line is valid.
+
+  @param {string} lines - Multi-line text, e.g. "Base Metal: 18K White Gold"
+  @param {string} [heading] - Optional section heading rendered above the rows
+
+  @example
+  {% render 'product-spec-rows', heading: 'Materials', lines: product.metafields.custom.materials.value %}
+{%- enddoc -%}
+
+{%- liquid
+  assign rows = ''
+  assign line_list = lines | newline_to_br | split: '<br />'
+  capture rows
+    for line in line_list
+      assign label = line | split: ':' | first | strip
+      assign value = line | remove_first: label | remove_first: ':' | strip
+      if label != blank and value != blank
+        assign label_html = label | escape
+        assign value_html = value | escape
+        echo '<div class="product-specs__row"><dt>' | append: label_html | append: '</dt>'
+        echo '<dd>' | append: value_html | append: '</dd></div>'
+      endif
+    endfor
+  endcapture
+-%}
+{%- if rows != blank -%}
+  {%- if heading != blank -%}
+    <h4 class="product-specs__heading">{{ heading }}</h4>
+  {%- endif -%}
+  <dl class="product-specs__list">{{ rows }}</dl>
+{%- endif -%}

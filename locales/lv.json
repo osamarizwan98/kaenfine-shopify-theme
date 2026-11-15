@@ -371,6 +371,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "Pievienot grozam",
       "adding_to_cart": "Pievieno...",
       "added_to_cart": "Pievienots grozam",

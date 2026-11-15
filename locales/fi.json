@@ -341,6 +341,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "Lisää ostoskoriin",
       "added_to_cart": "Lisätty ostoskoriin",
       "adding_to_cart": "Lisätään...",

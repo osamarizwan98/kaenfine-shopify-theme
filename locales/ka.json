@@ -364,6 +364,12 @@
   },
   "products": {
     "product": {
+      "specs": {
+        "materials": "Materials",
+        "specifications": "Specifications",
+        "care": "Care",
+        "reference": "Ref: {{ sku }}"
+      },
       "add_to_cart": "კალათაში დამატება",
       "adding_to_cart": "ემატება...",
       "added_to_cart": "დაემატა კალათას",

@@ -41,7 +41,7 @@
             "large_first_image": false,
             "icons_style": "arrow",
             "slideshow_controls_style": "counter",
-            "slideshow_mobile_controls_style": "dots",
+            "slideshow_mobile_controls_style": "progress",
             "thumbnail_position": "right",
             "thumbnail_width": 44,
             "thumbnail_radius": 0,
@@ -52,7 +52,7 @@
             "extend_media": false,
             "zoom": true,
             "video_loop": false,
-            "hide_variants": true,
+            "hide_variants": false,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -70,7 +70,7 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
-            "gap": 28,
+            "gap": 15,
             "sticky_details_desktop": true,
             "background_media": "none",
             "background_color": "",
@@ -81,12 +81,24 @@
             "border_opacity": 100,
             "border_color": "",
             "border_radius": 0,
-            "padding-block-start": 24,
+            "padding-block-start": 0,
             "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
+            "product_info_bar_Ib7Kq2": {
+              "type": "product-info-bar",
+              "settings": {
+                "item_1_icon": "shield",
+                "item_1_text": "2 Year Warranty",
+                "item_2_icon": "box",
+                "item_2_text": "Free Returns & Exchanges",
+                "item_3_icon": "truck",
+                "item_3_text": "Free Shipping"
+              },
+              "blocks": {}
+            },
             "group_icgrde": {
               "type": "group",
               "name": "t:names.header",
@@ -98,7 +110,7 @@
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 5,
+                "gap": 2,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -127,27 +139,25 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_b76gFc": {
-                  "type": "text",
-                  "name": "t:names.text",
+                "product_collection_label_Kc7nPq": {
+                  "type": "product-collection-label",
                   "settings": {
-                    "text": "<p><a href=\"/collections/fine-jewelry\" title=\"Fine Jewelry\">Fine Jewelry</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "custom",
                     "font": "var(--font-body--family)",
-                    "font_size": "0.625rem",
+                    "font_size": "0.75rem",
                     "line_height": "tight",
                     "letter_spacing": "normal",
                     "case": "uppercase",
                     "wrap": "pretty",
-                    "text_color": "#BCB7AD",
+                    "text_color": "#bcb7ad",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 11,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -164,16 +174,16 @@
                     "type_preset": "custom",
                     "font": "var(--font-heading--family)",
                     "font_size": "0.875rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "uppercase",
+                    "line_height": "tight",
+                    "letter_spacing": "tight",
+                    "case": "none",
                     "wrap": "pretty",
                     "text_color": "{{ settings.color_palette.foreground }}",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 2,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -188,10 +198,10 @@
                     "type_preset": "custom",
                     "width": "100%",
                     "alignment": "left",
-                    "font": "var(--font-heading--family)",
+                    "font": "var(--font-body--family)",
                     "font_size": "0.875rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
+                    "line_height": "tight",
+                    "letter_spacing": "tight",
                     "case": "none",
                     "text_color": "{{ settings.color_palette.foreground }}",
                     "padding-block-start": 0,
@@ -200,19 +210,45 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "product_materials_Rm4tWz": {
+                  "type": "product-materials",
+                  "settings": {
+                    "direction": "vertical",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 24,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "text_b76gFc",
+                "product_collection_label_Kc7nPq",
                 "text_xrnftG",
-                "price_tVjtKg"
+                "price_tVjtKg",
+                "product_materials_Rm4tWz"
               ]
             },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
                 "variant_style": "buttons",
-                "show_swatches": false,
+                "show_swatches": true,
                 "option_label_text_color": "",
                 "variant_style_class": "default",
                 "custom_variant_background": "{{ settings.color_palette.background }}",
@@ -222,13 +258,258 @@
                 "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
                 "custom_selected_variant_text": "{{ settings.color_palette.background }}",
                 "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "text_only": true,
+                "type_preset": "h6",
                 "alignment": "left",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "popup_link_Sg4Qx7": {
+                  "type": "popup-link",
+                  "settings": {
+                    "behavior": "drawer",
+                    "heading": "Size guide",
+                    "type_preset": "h6",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "text_Sg1Hd2": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Size guide</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "uppercase",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 40,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "accordion_Sg3Ac4": {
+                      "type": "accordion",
+                      "settings": {
+                        "icon": "caret",
+                        "dividers": true,
+                        "minimal_style": false,
+                        "single_row_open": true,
+                        "divider_color": "#d0cbc1",
+                        "type_preset": "h6",
+                        "background_color": "",
+                        "text_color": "",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_color": "",
+                        "border_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {
+                        "accordion_row_Sg5Rw1": {
+                          "type": "_accordion-row",
+                          "settings": {
+                            "heading": "USING AN EXISTING RING WHICH FITS PROPERLY TO THE FINGER",
+                            "open_by_default": true,
+                            "icon": "none",
+                            "width": 20
+                          },
+                          "blocks": {
+                            "text_Sg6St1": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>How to measure your diameter</p>",
+                                "width": "100%",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "text_color": "",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 8,
+                                "padding-block-end": 0,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                              },
+                              "blocks": {}
+                            },
+                            "custom_liquid_Sg6Vd1": {
+                              "type": "custom-liquid",
+                              "settings": {
+                                "custom_liquid": "<video class='size-video' src='https://cdn.shopify.com/videos/c/o/v/3eb16ab680464ad5ab3ec7e9440c3ecd.mp4' poster='https://cdn.shopify.com/s/files/1/0739/2637/7767/files/know-the-size-poster-video.jpg' controls playsinline preload='none' disablepictureinpicture controlslist='nodownload' aria-label='How to measure the internal diameter of a ring'></video>"
+                              },
+                              "blocks": {}
+                            },
+                            "text_Sg6St2": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>1. Select an existing ring that fits the desired finger.<br>2. Measure the internal diameter of the ring in mm.<br>3. Select the diameter below to determine your ring size.</p>",
+                                "width": "100%",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "text_color": "",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 12,
+                                "padding-block-end": 26,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "text_Sg6St1",
+                            "custom_liquid_Sg6Vd1",
+                            "text_Sg6St2"
+                          ]
+                        },
+                        "accordion_row_Sg5Rw2": {
+                          "type": "_accordion-row",
+                          "settings": {
+                            "heading": "SIZE CHART",
+                            "open_by_default": false,
+                            "icon": "none",
+                            "width": 20
+                          },
+                          "blocks": {
+                            "custom_liquid_Sg7Tb1": {
+                              "type": "custom-liquid",
+                              "settings": {
+                                "custom_liquid": "<table class='size-table'><thead><tr><th scope='col'>Internal diameter(mm)</th><th scope='col'>Internal diameter(in)</th><th scope='col'><strong>Desired size</strong></th></tr></thead><tbody><tr><td>15,3 mm</td><td>0.60 in</td><td><strong>8*</strong></td></tr><tr><td>15,9 mm</td><td>0.63 in</td><td><strong>10</strong></td></tr><tr><td>16,5 mm</td><td>0.65 in</td><td><strong>12</strong></td></tr><tr><td>17,1 mm</td><td>0.67 in</td><td><strong>14</strong></td></tr><tr><td>17,8 mm</td><td>0.70 in</td><td><strong>16</strong></td></tr><tr><td>18,4 mm</td><td>0.73 in</td><td><strong>18*</strong></td></tr></tbody></table>"
+                              },
+                              "blocks": {}
+                            },
+                            "text_Sg8Nt1": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>* Sizes 8 / 18: available in some styles</p>",
+                                "width": "100%",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "text_color": "",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 20,
+                                "padding-block-end": 26,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "custom_liquid_Sg7Tb1",
+                            "text_Sg8Nt1"
+                          ]
+                        },
+                        "accordion_row_Sg5Rw3": {
+                          "type": "_accordion-row",
+                          "settings": {
+                            "heading": "COMPARING YOUR COUNTRY'S SIZES WITH OURS",
+                            "open_by_default": false,
+                            "icon": "none",
+                            "width": 20
+                          },
+                          "blocks": {
+                            "custom_liquid_Sg7Tb2": {
+                              "type": "custom-liquid",
+                              "settings": {
+                                "custom_liquid": "<table class='size-table size-table--dense'><thead><tr><th scope='col'><strong>Desired size</strong></th><th scope='col'>sp / it</th><th scope='col'>fr / de</th><th scope='col'>uk / au</th><th scope='col'>us / ca</th><th scope='col'>jp / ch</th></tr></thead><tbody><tr><td><strong>8*</strong></td><td>8</td><td>48</td><td>I - J</td><td>4.5 - 5</td><td>8</td></tr><tr><td><strong>10</strong></td><td>10</td><td>50</td><td>K</td><td>5.5</td><td>9</td></tr><tr><td><strong>12</strong></td><td>12</td><td>52</td><td>L - M</td><td>6 - 6.5</td><td>11</td></tr><tr><td><strong>14</strong></td><td>14</td><td>54</td><td>N</td><td>6.75 - 7</td><td>13</td></tr><tr><td><strong>16</strong></td><td>16</td><td>56</td><td>O - P</td><td>7.5</td><td>15</td></tr><tr><td><strong>18*</strong></td><td>18</td><td>58</td><td>Q</td><td>8</td><td>17</td></tr></tbody></table>"
+                              },
+                              "blocks": {}
+                            },
+                            "text_Sg8Nt2": {
+                              "type": "text",
+                              "settings": {
+                                "text": "<p>* Sizes 8 / 18: available in some styles</p>",
+                                "width": "100%",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "custom",
+                                "font": "var(--font-body--family)",
+                                "font_size": "0.75rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "text_color": "",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 20,
+                                "padding-block-end": 26,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                              },
+                              "blocks": {}
+                            }
+                          },
+                          "block_order": [
+                            "custom_liquid_Sg7Tb2",
+                            "text_Sg8Nt2"
+                          ]
+                        }
+                      },
+                      "block_order": [
+                        "accordion_row_Sg5Rw1",
+                        "accordion_row_Sg5Rw2",
+                        "accordion_row_Sg5Rw3"
+                      ]
+                    }
+                  },
+                  "block_order": [
+                    "text_Sg1Hd2",
+                    "accordion_Sg3Ac4"
+                  ]
+                }
+              },
+              "block_order": [
+                "popup_link_Sg4Qx7"
+              ]
             },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
@@ -252,14 +533,15 @@
                 "input_border_color": "{{ settings.color_palette.foreground }}",
                 "border_width": 1,
                 "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-start": 10,
+                "padding-block-end": 3,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
                 "quantity": {
                   "type": "quantity",
+                  "disabled": true,
                   "static": true,
                   "settings": {
                     "input_style": "default",
@@ -284,6 +566,7 @@
                 },
                 "accelerated-checkout": {
                   "type": "accelerated-checkout",
+                  "disabled": true,
                   "static": true,
                   "settings": {},
                   "blocks": {}
@@ -291,38 +574,276 @@
               },
               "block_order": []
             },
-            "text_aEtTtq": {
-              "type": "text",
-              "name": "t:names.product_description",
+            "accordion_Pd2Ac0": {
+              "type": "accordion",
               "settings": {
-                "text": "{{ closest.product.description }}",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
+                "icon": "caret",
+                "dividers": true,
+                "minimal_style": true,
+                "single_row_open": true,
+                "divider_color": "#d0cbc1",
+                "type_preset": "h6",
+                "background_color": "",
                 "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 35,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_Pd2Dt1": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "PRODUCT DETAILS",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "product_specs_Pd2Sp1": {
+                      "type": "product-specs",
+                      "settings": {
+                        "source": "details",
+                        "note": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_specs_Pd2Sp1"
+                  ]
+                },
+                "accordion_row_Pd2Ld2": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "LAB-GROWN DIAMOND CHARACTERISTICS",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "product_specs_Pd2Sp2": {
+                      "type": "product-specs",
+                      "settings": {
+                        "source": "diamond",
+                        "note": "<p>Our lab-grown diamonds are created through an innovative process that replicates the natural conditions in which diamonds are formed. Physically, optically and chemically identical to mined diamonds, they offer the same beauty and durability. Their quality is therefore assessed according to the same international standards: the 4 Cs (Color, Clarity, Cut and Carat). The only difference lies in their origin.</p>"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_specs_Pd2Sp2"
+                  ]
+                },
+                "accordion_row_Pd2Cr3": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "CRAFTSMANSHIP",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "product_specs_Pd2Cr3": {
+                      "type": "product-specs",
+                      "settings": {
+                        "source": "craftsmanship",
+                        "note": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_specs_Pd2Cr3"
+                  ]
+                },
+                "accordion_row_Pd2In4": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "INSPIRATION",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "product_specs_Pd2In4": {
+                      "type": "product-specs",
+                      "settings": {
+                        "source": "inspiration",
+                        "note": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_specs_Pd2In4"
+                  ]
+                },
+                "accordion_row_Pd2Pk5": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "PACKAGING",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Pd2Pk5": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Designed with intention, our packaging reflects the craftsmanship of the piece within.</p><p>Each jewel is carefully presented in our signature fabric pouch and box, where it is protected to preserve its form and delicacy. The warranty and care instructions accompany every order.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "tight",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 30,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "image_PUzXh9": {
+                      "type": "image",
+                      "name": "t:names.image",
+                      "settings": {
+                        "image": "shopify://shop_images/O1CN01tKrPBn27fuCGbar4I__107687825.webp",
+                        "link": "",
+                        "image_ratio": "landscape",
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fill",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_color": "",
+                        "border_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 5,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "image_dRcGUp": {
+                      "type": "image",
+                      "name": "t:names.image",
+                      "settings": {
+                        "image": "shopify://shop_images/O1CN018u1ELy27fuCBshFqD__107687825.webp",
+                        "link": "",
+                        "image_ratio": "landscape",
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fill",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_color": "",
+                        "border_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Pd2Pk5",
+                    "image_PUzXh9",
+                    "image_dRcGUp"
+                  ]
+                },
+                "accordion_row_Pd2Rs6": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "RESPONSIBILITY",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Pd2Rs6": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Every stage of our creation and production process is approached with care and consideration, from the design of our collections in Barcelona and the selection of materials to our collaboration with specialized manufacturers.</p><p>Our commitment is reflected in increasingly responsible sourcing, the use of lower-impact materials, and the traceability of our jewelry, while upholding international quality and safety standards.</p><p>All our direct suppliers are members of the Responsible Jewellery Council (RJC).</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "tight",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Pd2Rs6"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_Pd2Dt1",
+                "accordion_row_Pd2Ld2",
+                "accordion_row_Pd2Cr3",
+                "accordion_row_Pd2In4",
+                "accordion_row_Pd2Pk5",
+                "accordion_row_Pd2Rs6"
+              ]
+            },
+            "info_tabs_Pd2It7": {
+              "type": "info-tabs",
+              "settings": {
+                "tab_1_title": "Shipping & Delivery",
+                "tab_1_content": "<p>Express shipping does not apply for this product</p><p><strong>Standard Shipping</strong></p><ul><li>Europe | 1 - 3 working days</li><li>Other regions | 1 - 7 working days</li></ul><p><strong>Express Shipping</strong></p><ul><li>Worldwide | 1 - 2 working days</li></ul><p><strong>Order Preparation</strong></p><p>Orders are prepared with care within 24 business hours of confirmation. Each piece is handled with protective gloves and presented to ensure a unique unboxing experience. Engraved jewelry requires a dedicated preparation process and is ready within 48 hours.</p><p><em>For further information, please consult our detailed <a href=\"#\">shipping and delivery conditions.</a></em></p>",
+                "tab_2_title": "Exchanges & Returns",
+                "tab_2_content": "<p>Should you need to make a return, you can receive a refund to your original payment method within <strong>14 days</strong>, or opt for store credit or an exchange within <strong>30 days</strong>. Personalised jewellery and special orders are not eligible for exchange or return.</p><p>Returns can be easily initiated through our online Returns Centre. Once submitted, our Customer Care team will review your request within 24–48 hours and send you the next steps by email.</p><p>For full details or to start a request, visit our <a href=\"#\">Exchange &amp; Return Policy</a>.</p>",
+                "tab_3_title": "Warranty",
+                "tab_3_content": "<p>All our jewelry is covered by a three-year guarantee of conformity from the date of delivery, protecting against manufacturing defects in materials or craftsmanship, without prejudice to the customer’s statutory rights. Normal wear and tear resulting from use is excluded.</p><p>For more information, please consult our <a href=\"#\">Warranty Policy</a>.</p>",
+                "padding-block-start": 50,
+                "padding-block-end": 0
               },
               "blocks": {}
             }
           },
           "block_order": [
+            "product_info_bar_Ib7Kq2",
             "group_icgrde",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "text_aEtTtq"
+            "accordion_Pd2Ac0",
+            "info_tabs_Pd2It7"
           ]
         }
       },
@@ -341,41 +862,77 @@
         "padding-block-end": 0
       }
     },
-    "product_recommendations_qggXJq": {
-      "type": "product-recommendations",
+    "explore_collection": {
+      "type": "product-list",
       "blocks": {
-        "text_cbcgyb": {
-          "type": "text",
-          "name": "t:names.header",
+        "static-header": {
+          "type": "_product-list-content",
+          "static": true,
           "settings": {
-            "text": "<h3>You may also like </h3>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h4",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "heading": {
+              "type": "_product-list-text",
+              "settings": {
+                "text": "<h2>Explore the collection</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "tight",
+                "letter_spacing": "normal",
+                "case": "uppercase",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 23,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading"
+          ]
         },
         "static-product-card": {
           "type": "_product-card",
-          "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 8,
+            "product_card_gap": 0,
             "background_color": "",
             "border": "none",
             "border_width": 1,
@@ -383,16 +940,16 @@
             "border_color": "",
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 8,
+            "padding-block-end": 32,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_DNizbJ": {
+            "product-card-gallery": {
               "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "portrait",
+                "show_collection_label": true,
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -405,17 +962,41 @@
               },
               "blocks": {}
             },
-            "product_title_M7MJkb": {
+            "product_title": {
               "type": "product-title",
-              "name": "t:names.product_title",
               "settings": {
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "0.75rem",
+                "line_height": "tight",
+                "letter_spacing": "tight",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 20,
+                "padding-block-end": 0,
+                "padding-inline-start": 20,
+                "padding-inline-end": 36
+              },
+              "blocks": {}
+            },
+            "product_materials": {
+              "type": "product-materials",
+              "settings": {
+                "direction": "horizontal",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
+                "font_size": "0.75rem",
+                "line_height": "tight",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
@@ -423,69 +1004,300 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 2,
                 "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-start": 20,
+                "padding-inline-end": 36
               },
               "blocks": {}
             },
-            "price_gLWgA6": {
+            "price": {
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
                 "show_installments": false,
                 "show_tax_info": false,
-                "type_preset": "h6",
+                "type_preset": "custom",
                 "width": "100%",
                 "alignment": "left",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
+                "font_size": "0.75rem",
+                "line_height": "tight",
                 "letter_spacing": "normal",
                 "case": "none",
                 "text_color": "",
+                "padding-block-start": 10,
+                "padding-block-end": 9,
+                "padding-inline-start": 20,
+                "padding-inline-end": 36
+              },
+              "blocks": {}
+            },
+            "swatches": {
+              "type": "swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 0,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 16,
+                "product_swatches_padding_right": 20
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product-card-gallery",
+            "product_title",
+            "product_materials",
+            "price",
+            "swatches"
+          ]
+        }
+      },
+      "settings": {
+        "product_source": "collection",
+        "collection": "fine-jewelry",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "max_products": 8,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "44cqw",
+        "columns_gap": 2,
+        "rows_gap": 8,
+        "icons_style": "chevron",
+        "icons_shape": "none",
+        "arrows_position": "top-right",
+        "section_width": "full-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 20,
+        "background_color": "",
+        "padding-block-start": 80,
+        "padding-block-end": 0
+      }
+    },
+    "recently_viewed": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "heading": {
+              "type": "_product-list-text",
+              "settings": {
+                "text": "<h2>Recently viewed</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "tight",
+                "letter_spacing": "normal",
+                "case": "uppercase",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
-                "padding-inline-start": 0,
+                "padding-inline-start": 23,
                 "padding-inline-end": 0
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "product_card_gallery_DNizbJ",
-            "product_title_M7MJkb",
-            "price_gLWgA6"
+            "heading"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 0,
+            "background_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 32,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product-card-gallery": {
+              "type": "_product-card-gallery",
+              "settings": {
+                "image_ratio": "portrait",
+                "show_collection_label": true,
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title": {
+              "type": "product-title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "0.75rem",
+                "line_height": "tight",
+                "letter_spacing": "tight",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 20,
+                "padding-block-end": 0,
+                "padding-inline-start": 20,
+                "padding-inline-end": 36
+              },
+              "blocks": {}
+            },
+            "product_materials": {
+              "type": "product-materials",
+              "settings": {
+                "direction": "horizontal",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "tight",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 2,
+                "padding-block-end": 0,
+                "padding-inline-start": 20,
+                "padding-inline-end": 36
+              },
+              "blocks": {}
+            },
+            "price": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "custom",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "tight",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 10,
+                "padding-block-end": 9,
+                "padding-inline-start": 20,
+                "padding-inline-end": 36
+              },
+              "blocks": {}
+            },
+            "swatches": {
+              "type": "swatches",
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 0,
+                "product_swatches_padding_bottom": 0,
+                "product_swatches_padding_left": 16,
+                "product_swatches_padding_right": 20
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product-card-gallery",
+            "product_title",
+            "product_materials",
+            "price",
+            "swatches"
           ]
         }
       },
-      "block_order": [
-        "text_cbcgyb"
-      ],
-      "name": "t:names.product_recommendations",
       "settings": {
-        "product": "{{ closest.product }}",
-        "recommendation_type": "related",
-        "layout_type": "grid",
+        "product_source": "recently_viewed",
+        "collection": "",
+        "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 4,
         "columns": 4,
         "mobile_columns": "2",
-        "columns_gap": 12,
-        "rows_gap": 24,
-        "icons_style": "arrow",
+        "mobile_card_size": "44cqw",
+        "columns_gap": 2,
+        "rows_gap": 8,
+        "icons_style": "chevron",
         "icons_shape": "none",
-        "section_width": "page-width",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "arrows_position": "top-right",
+        "section_width": "full-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 20,
+        "background_color": "",
+        "padding-block-start": 40,
+        "padding-block-end": 40
       }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq"
+    "explore_collection",
+    "recently_viewed"
   ]
 }
